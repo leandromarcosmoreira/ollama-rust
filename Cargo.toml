@@ -1,0 +1,73 @@
+[package]
+name = "ollama"
+version = "0.5.0"
+edition = "2021"
+license = "MIT"
+authors = ["Ollama Team"]
+description = "Run large language models locally - Rust implementation"
+[features]
+cuda = ["candle-core/cuda", "candle-nn/cuda"]
+
+[dependencies]
+anyhow = "1.0"
+async-trait = "0.1"
+axum = "0.7"
+base64 = "0.22"
+bytes = "1.9"
+chrono = "0.4"
+clap = { version = "4.5", features = ["derive"] }
+dialoguer = "0.11"
+dirs = "6.0"
+futures = "0.3"
+indicatif = "0.17"
+log = "0.4"
+md-5 = "0.10"
+once_cell = "1.20"
+parking_lot = "0.12"
+rand = "0.8"
+rayon = "1.10"
+regex = "1.11"
+fancy-regex = "0.14"
+reqwest = { version = "0.12", features = ["json", "stream", "rustls-tls", "blocking"] }
+rustyline = "14.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+thiserror = "2.0"
+tokio = { version = "1", features = ["full"] }
+tokio-stream = "0.1"
+tower = "0.5"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+unicode-width = "0.1"
+uuid = { version = "1.11", features = ["v4"] }
+sha2 = "0.10"
+url = "2.5"
+scraper = "0.21"
+futures-util = "0.3"
+urlencoding = "2.1"
+half = "2.4"
+memmap2 = "0.9"
+bytemuck = "1.21"
+byteorder = "1.5"
+notify = "6.1"
+candle-core = { version = "0.9" }
+candle-nn = { version = "0.9" }
+candle-transformers = "0.9"
+safetensors = "0.7"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = ["console"] }
+wasm-bindgen-futures = "0.4"
+serde-wasm-bindgen = "0.6"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+lto = "thin"
+opt-level = 3
+strip = true
+codegen-units = 1

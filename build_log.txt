@@ -1,0 +1,1856 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.custom
+#1 transferring dockerfile: 1.57kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/nvidia/cuda:12.6.3-devel-ubuntu22.04
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/nvidia/cuda:12.6.3-runtime-ubuntu22.04
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [stage-1 1/4] FROM docker.io/nvidia/cuda:12.6.3-runtime-ubuntu22.04@sha256:63a18dd805367dacfb077aeced8384ab2fb569598ec5f5f5220c3f90a5c23650
+#5 DONE 0.0s
+
+#6 [builder 1/6] FROM docker.io/nvidia/cuda:12.6.3-devel-ubuntu22.04
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 303.55MB 1.1s done
+#7 DONE 1.1s
+
+#8 [builder 2/6] RUN apt-get update && apt-get install -y     curl     build-essential     cmake     clang     libclang-dev     git     pkg-config     libssl-dev     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [builder 3/6] RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+#9 CACHED
+
+#10 [builder 4/6] WORKDIR /usr/src/ollama
+#10 CACHED
+
+#11 [builder 5/6] COPY . .
+#11 DONE 5.1s
+
+#12 [builder 6/6] RUN cargo build --release
+#12 0.191     Updating crates.io index
+#12 4.231  Downloading crates ...
+#12 4.349   Downloaded anstyle-parse v0.2.7
+#12 4.351   Downloaded anstyle-query v1.1.5
+#12 4.353   Downloaded atomic-waker v1.1.2
+#12 4.355   Downloaded is_terminal_polyfill v1.70.2
+#12 4.359   Downloaded itoa v1.0.17
+#12 4.361   Downloaded autocfg v1.5.0
+#12 4.363   Downloaded form_urlencoded v1.2.2
+#12 4.364   Downloaded fd-lock v4.0.4
+#12 4.365   Downloaded async-trait v0.1.89
+#12 4.369   Downloaded idna_adapter v1.2.1
+#12 4.371   Downloaded libloading v0.8.9
+#12 4.372   Downloaded anstream v0.6.21
+#12 4.379   Downloaded heck v0.5.0
+#12 4.380   Downloaded block-buffer v0.10.4
+#12 4.386   Downloaded anstyle v1.0.13
+#12 4.387   Downloaded foreign-types-shared v0.1.1
+#12 4.388   Downloaded crypto-common v0.1.7
+#12 4.389   Downloaded fnv v1.0.7
+#12 4.389   Downloaded httpdate v1.0.3
+#12 4.390   Downloaded futf v0.1.5
+#12 4.391   Downloaded equivalent v1.0.2
+#12 4.392   Downloaded futures-macro v0.3.32
+#12 4.393   Downloaded futures-core v0.3.32
+#12 4.394   Downloaded futures-task v0.3.32
+#12 4.395   Downloaded fastrand v2.3.0
+#12 4.396   Downloaded cssparser-macros v0.6.1
+#12 4.397   Downloaded clap_lex v1.0.0
+#12 4.398   Downloaded dirs-sys v0.5.0
+#12 4.399   Downloaded cpufeatures v0.2.17
+#12 4.400   Downloaded http-body-util v0.1.3
+#12 4.401   Downloaded futures-executor v0.3.32
+#12 4.402   Downloaded http-body v1.0.1
+#12 4.403   Downloaded home v0.5.11
+#12 4.404   Downloaded hyper-tls v0.6.0
+#12 4.406   Downloaded iri-string v0.7.10
+#12 4.411   Downloaded subtle v2.6.1
+#12 4.412   Downloaded litemap v0.8.1
+#12 4.414   Downloaded sync_wrapper v1.0.2
+#12 4.414   Downloaded nibble_vec v0.1.0
+#12 4.415   Downloaded rustc-hash v2.1.1
+#12 4.416   Downloaded slab v0.4.12
+#12 4.418   Downloaded futures-channel v0.3.32
+#12 4.419   Downloaded hyper-rustls v0.27.7
+#12 4.421   Downloaded icu_provider v2.1.1
+#12 4.422   Downloaded icu_normalizer v2.1.1
+#12 4.425   Downloaded smallvec v1.15.1
+#12 4.427   Downloaded thiserror v1.0.69
+#12 4.430   Downloaded tendril v0.4.3
+#12 4.432   Downloaded tinystr v0.8.2
+#12 4.433   Downloaded hyper-util v0.1.20
+#12 4.438   Downloaded shlex v1.3.0
+#12 4.439   Downloaded thread_local v1.1.9
+#12 4.440   Downloaded tokio-native-tls v0.3.1
+#12 4.441   Downloaded phf_generator v0.11.3
+#12 4.442   Downloaded shell-words v1.1.1
+#12 4.443   Downloaded tokio-macros v2.6.0
+#12 4.444   Downloaded tower-layer v0.3.3
+#12 4.445   Downloaded icu_properties_data v2.1.2
+#12 4.455   Downloaded urlencoding v2.1.3
+#12 4.457   Downloaded unsafe-libyaml v0.2.11
+#12 4.461   Downloaded untrusted v0.9.0
+#12 4.462   Downloaded version_check v0.9.5
+#12 4.463   Downloaded ppv-lite86 v0.2.21
+#12 4.464   Downloaded unicode-ident v1.0.24
+#12 4.466   Downloaded utf8parse v0.2.2
+#12 4.467   Downloaded quinn-udp v0.5.14
+#12 4.468   Downloaded zerovec-derive v0.11.2
+#12 4.469   Downloaded serde_derive v1.0.228
+#12 4.471   Downloaded zmij v1.0.21
+#12 4.472   Downloaded mime v0.3.17
+#12 4.473   Downloaded percent-encoding v2.3.2
+#12 4.474   Downloaded servo_arc v0.4.3
+#12 4.476   Downloaded yoke v0.8.1
+#12 4.477   Downloaded walkdir v2.5.0
+#12 4.478   Downloaded utf8_iter v1.0.4
+#12 4.479   Downloaded writeable v0.6.2
+#12 4.480   Downloaded encoding_rs v0.8.35
+#12 4.496   Downloaded parking_lot v0.12.5
+#12 4.498   Downloaded zerofrom v0.1.6
+#12 4.500   Downloaded tokio-util v0.7.18
+#12 4.506   Downloaded zeroize v1.8.2
+#12 4.508   Downloaded tower-http v0.6.8
+#12 4.513   Downloaded tracing-subscriber v0.3.22
+#12 4.519   Downloaded stable_deref_trait v1.2.1
+#12 4.520   Downloaded string_cache v0.8.9
+#12 4.521   Downloaded unicode-width v0.1.14
+#12 4.529   Downloaded synstructure v0.13.2
+#12 4.530   Downloaded unicode-width v0.2.2
+#12 4.534   Downloaded webpki-roots v1.0.6
+#12 4.537   Downloaded typenum v1.19.0
+#12 4.539   Downloaded openssl-macros v0.1.1
+#12 4.539   Downloaded vcpkg v0.2.15
+#12 4.568   Downloaded serde_json v1.0.149
+#12 4.574   Downloaded unicode-segmentation v1.12.0
+#12 4.578   Downloaded zerofrom-derive v0.1.6
+#12 4.580   Downloaded zerovec v0.11.5
+#12 4.586   Downloaded rustls v0.23.36
+#12 4.593   Downloaded zerocopy v0.8.39
+#12 4.607   Downloaded regex-syntax v0.8.9
+#12 4.612   Downloaded zerotrie v0.2.3
+#12 4.614   Downloaded openssl v0.10.75
+#12 4.620   Downloaded reqwest v0.12.28
+#12 4.623   Downloaded utf-8 v0.7.6
+#12 4.624   Downloaded rayon v1.11.0
+#12 4.630   Downloaded quinn-proto v0.11.13
+#12 4.634   Downloaded portable-atomic v1.13.1
+#12 4.639   Downloaded rustix v1.1.3
+#12 4.653   Downloaded radix_trie v0.2.1
+#12 4.656   Downloaded yoke-derive v0.8.1
+#12 4.656   Downloaded nom v7.1.3
+#12 4.659   Downloaded mio v1.1.1
+#12 4.665   Downloaded regex v1.12.3
+#12 4.670   Downloaded lru-slab v0.1.2
+#12 4.671   Downloaded url v2.5.8
+#12 4.674   Downloaded siphasher v1.0.2
+#12 4.675   Downloaded serde_core v1.0.228
+#12 4.677   Downloaded rustls-webpki v0.103.9
+#12 4.679   Downloaded proc-macro2 v1.0.106
+#12 4.681   Downloaded openssl-sys v0.9.111
+#12 4.685   Downloaded regex-automata v0.4.14
+#12 4.695   Downloaded log v0.4.29
+#12 4.698   Downloaded serde_yaml v0.9.34+deprecated
+#12 4.701   Downloaded selectors v0.26.0
+#12 4.703   Downloaded libc v0.2.182
+#12 4.736   Downloaded rand v0.9.2
+#12 4.738   Downloaded phf_macros v0.11.3
+#12 4.739   Downloaded nix v0.28.0
+#12 4.746   Downloaded scraper v0.21.0
+#12 4.747   Downloaded same-file v1.0.6
+#12 4.748   Downloaded rand_chacha v0.3.1
+#12 4.748   Downloaded rand v0.8.5
+#12 4.750   Downloaded phf_codegen v0.11.3
+#12 4.751   Downloaded tracing v0.1.44
+#12 4.761   Downloaded rand_core v0.9.5
+#12 4.762   Downloaded rand_chacha v0.9.0
+#12 4.763   Downloaded serde v1.0.228
+#12 4.764   Downloaded memchr v2.8.0
+#12 4.767   Downloaded serde_path_to_error v0.1.20
+#12 4.768   Downloaded rustls-pki-types v1.14.0
+#12 4.770   Downloaded rand_core v0.6.4
+#12 4.770   Downloaded prettyplease v0.2.37
+#12 4.772   Downloaded option-ext v0.2.0
+#12 4.773   Downloaded new_debug_unreachable v1.0.6
+#12 4.773   Downloaded indexmap v2.13.0
+#12 4.776   Downloaded sharded-slab v0.1.7
+#12 4.778   Downloaded scopeguard v1.2.0
+#12 4.778   Downloaded ryu v1.0.23
+#12 4.780   Downloaded rustyline v14.0.0
+#12 4.783   Downloaded rayon-core v1.13.0
+#12 4.785   Downloaded quinn v0.11.9
+#12 4.787   Downloaded openssl-probe v0.2.1
+#12 4.787   Downloaded native-tls v0.2.18
+#12 4.788   Downloaded tower v0.5.3
+#12 4.793   Downloaded tokio v1.49.0
+#12 4.817   Downloaded once_cell v1.21.3
+#12 4.819   Downloaded matchit v0.7.3
+#12 4.820   Downloaded precomputed-hash v0.1.1
+#12 4.820   Downloaded pkg-config v0.3.32
+#12 4.821   Downloaded serde_urlencoded v0.7.1
+#12 4.822   Downloaded lazy_static v1.5.0
+#12 4.823   Downloaded ring v0.17.14
+#12 4.847   Downloaded mac v0.1.1
+#12 4.848   Downloaded ipnet v2.11.0
+#12 4.849   Downloaded markup5ever v0.14.1
+#12 4.850   Downloaded try-lock v0.2.5
+#12 4.850   Downloaded want v0.3.1
+#12 4.851   Downloaded uuid v1.21.0
+#12 4.852   Downloaded tempfile v3.25.0
+#12 4.854   Downloaded minimal-lexical v0.2.1
+#12 4.856   Downloaded parking_lot_core v0.9.12
+#12 4.857   Downloaded rustversion v1.0.22
+#12 4.859   Downloaded tracing-log v0.2.0
+#12 4.859   Downloaded phf v0.11.3
+#12 4.860   Downloaded syn v2.0.116
+#12 4.867   Downloaded bindgen v0.71.1
+#12 4.871   Downloaded tracing-core v0.1.36
+#12 4.872   Downloaded tracing-attributes v0.1.31
+#12 4.874   Downloaded tokio-stream v0.1.18
+#12 4.876   Downloaded console v0.15.11
+#12 4.878   Downloaded chrono v0.4.43
+#12 4.882   Downloaded tower-service v0.3.3
+#12 4.883   Downloaded signal-hook-registry v1.4.8
+#12 4.884   Downloaded sha2 v0.10.9
+#12 4.885   Downloaded hyper v1.8.1
+#12 4.889   Downloaded h2 v0.4.13
+#12 4.892   Downloaded tokio-rustls v0.26.4
+#12 4.894   Downloaded tinyvec v1.10.0
+#12 4.895   Downloaded futures-util v0.3.32
+#12 4.902   Downloaded clap_builder v4.5.59
+#12 4.906   Downloaded thiserror-impl v1.0.69
+#12 4.907   Downloaded hashbrown v0.16.1
+#12 4.910   Downloaded tinyvec_macros v0.1.1
+#12 4.910   Downloaded http v1.4.0
+#12 4.912   Downloaded quote v1.0.44
+#12 4.914   Downloaded phf_shared v0.11.3
+#12 4.914   Downloaded axum v0.7.9
+#12 4.918   Downloaded idna v1.1.0
+#12 4.921   Downloaded aho-corasick v1.1.4
+#12 4.924   Downloaded thiserror-impl v2.0.18
+#12 4.925   Downloaded thiserror v2.0.18
+#12 4.928   Downloaded base64 v0.22.1
+#12 4.930   Downloaded pin-project-lite v0.2.16
+#12 4.933   Downloaded icu_collections v2.1.1
+#12 4.936   Downloaded cc v1.2.56
+#12 4.938   Downloaded socket2 v0.6.2
+#12 4.939   Downloaded icu_locale_core v2.1.1
+#12 4.943   Downloaded getrandom v0.4.1
+#12 4.945   Downloaded cssparser v0.34.0
+#12 4.946   Downloaded bytes v1.11.1
+#12 4.949   Downloaded pin-utils v0.1.0
+#12 4.949   Downloaded md-5 v0.10.6
+#12 4.950   Downloaded icu_normalizer_data v2.1.1
+#12 4.951   Downloaded httparse v1.10.1
+#12 4.953   Downloaded linux-raw-sys v0.11.0
+#12 4.987   Downloaded html5ever v0.29.1
+#12 4.989   Downloaded futures v0.3.32
+#12 4.992   Downloaded clap_derive v4.5.55
+#12 4.993   Downloaded icu_properties v2.1.2
+#12 4.995   Downloaded clang-sys v1.8.1
+#12 4.996   Downloaded getrandom v0.3.4
+#12 4.998   Downloaded derive_more v0.99.20
+#12 5.000   Downloaded clap v4.5.59
+#12 5.005   Downloaded iana-time-zone v0.1.65
+#12 5.007   Downloaded crossbeam-deque v0.8.6
+#12 5.008   Downloaded bitflags v2.11.0
+#12 5.010   Downloaded nu-ansi-term v0.50.3
+#12 5.011   Downloaded getrandom v0.2.17
+#12 5.013   Downloaded strsim v0.11.1
+#12 5.014   Downloaded string_cache_codegen v0.5.4
+#12 5.014   Downloaded potential_utf v0.1.4
+#12 5.015   Downloaded crossbeam-utils v0.8.21
+#12 5.016   Downloaded anyhow v1.0.101
+#12 5.018   Downloaded getopts v0.2.24
+#12 5.019   Downloaded find-msvc-tools v0.1.9
+#12 5.020   Downloaded digest v0.10.7
+#12 5.021   Downloaded dialoguer v0.11.0
+#12 5.022   Downloaded cfg-if v1.0.4
+#12 5.023   Downloaded byteorder v1.5.0
+#12 5.024   Downloaded axum-core v0.4.5
+#12 5.025   Downloaded number_prefix v0.4.0
+#12 5.026   Downloaded num-traits v0.2.19
+#12 5.027   Downloaded match_token v0.1.0
+#12 5.027   Downloaded lock_api v0.4.14
+#12 5.028   Downloaded itertools v0.13.0
+#12 5.032   Downloaded indicatif v0.17.11
+#12 5.034   Downloaded glob v0.3.3
+#12 5.035   Downloaded either v1.15.0
+#12 5.035   Downloaded dtoa-short v0.3.5
+#12 5.036   Downloaded dtoa v1.0.11
+#12 5.036   Downloaded crossbeam-epoch v0.9.18
+#12 5.038   Downloaded colorchoice v1.0.4
+#12 5.038   Downloaded cmake v0.1.57
+#12 5.039   Downloaded cfg_aliases v0.2.1
+#12 5.040   Downloaded cexpr v0.6.0
+#12 5.040   Downloaded ego-tree v0.9.0
+#12 5.041   Downloaded dirs v6.0.0
+#12 5.042   Downloaded futures-io v0.3.32
+#12 5.042   Downloaded endian-type v0.1.2
+#12 5.043   Downloaded fxhash v0.2.1
+#12 5.043   Downloaded futures-sink v0.3.32
+#12 5.043   Downloaded foreign-types v0.3.2
+#12 5.044   Downloaded generic-array v0.14.7
+#12 5.045   Downloaded errno v0.3.14
+#12 5.045   Downloaded displaydoc v0.2.5
+#12 5.047   Downloaded cfg_aliases v0.1.1
+#12 5.047   Downloaded ahash v0.8.12
+#12 5.255    Compiling proc-macro2 v1.0.106
+#12 5.255    Compiling unicode-ident v1.0.24
+#12 5.255    Compiling quote v1.0.44
+#12 5.255    Compiling libc v0.2.182
+#12 5.255    Compiling cfg-if v1.0.4
+#12 5.255    Compiling smallvec v1.15.1
+#12 5.255    Compiling once_cell v1.21.3
+#12 5.255    Compiling shlex v1.3.0
+#12 5.255    Compiling find-msvc-tools v0.1.9
+#12 5.255    Compiling parking_lot_core v0.9.12
+#12 5.256    Compiling log v0.4.29
+#12 5.258    Compiling scopeguard v1.2.0
+#12 5.263    Compiling pin-project-lite v0.2.16
+#12 5.266    Compiling itoa v1.0.17
+#12 5.269    Compiling bytes v1.11.1
+#12 5.269    Compiling futures-core v0.3.32
+#12 5.271    Compiling stable_deref_trait v1.2.1
+#12 5.271    Compiling memchr v2.8.0
+#12 5.271    Compiling futures-sink v0.3.32
+#12 5.271    Compiling rand_core v0.6.4
+#12 5.271    Compiling siphasher v1.0.2
+#12 5.271    Compiling bitflags v2.11.0
+#12 5.279    Compiling slab v0.4.12
+#12 5.314    Compiling lock_api v0.4.14
+#12 5.315    Compiling serde_core v1.0.228
+#12 5.315    Compiling version_check v0.9.5
+#12 5.328    Compiling futures-io v0.3.32
+#12 5.349    Compiling futures-channel v0.3.32
+#12 5.389    Compiling cc v1.2.56
+#12 5.395    Compiling tracing-core v0.1.36
+#12 5.403    Compiling futures-task v0.3.32
+#12 5.411    Compiling vcpkg v0.2.15
+#12 5.421    Compiling serde v1.0.228
+#12 5.421    Compiling pkg-config v0.3.32
+#12 5.437    Compiling rand v0.8.5
+#12 5.439    Compiling equivalent v1.0.2
+#12 5.443    Compiling hashbrown v0.16.1
+#12 5.452    Compiling typenum v1.19.0
+#12 5.494    Compiling percent-encoding v2.3.2
+#12 5.512    Compiling phf_shared v0.11.3
+#12 5.528    Compiling zeroize v1.8.2
+#12 5.547    Compiling tower-service v0.3.3
+#12 5.547    Compiling litemap v0.8.1
+#12 5.589    Compiling httparse v1.10.1
+#12 5.604    Compiling writeable v0.6.2
+#12 5.617    Compiling generic-array v0.14.7
+#12 5.651    Compiling atomic-waker v1.1.2
+#12 5.669    Compiling zerocopy v0.8.39
+#12 5.700    Compiling try-lock v0.2.5
+#12 5.717    Compiling glob v0.3.3
+#12 5.723    Compiling new_debug_unreachable v1.0.6
+#12 5.739    Compiling icu_normalizer_data v2.1.1
+#12 5.747    Compiling fnv v1.0.7
+#12 5.748    Compiling icu_properties_data v2.1.2
+#12 5.768    Compiling want v0.3.1
+#12 5.802    Compiling rustls-pki-types v1.14.0
+#12 5.814    Compiling httpdate v1.0.3
+#12 5.820    Compiling rustix v1.1.3
+#12 5.857    Compiling http v1.4.0
+#12 5.925    Compiling crossbeam-utils v0.8.21
+#12 5.942    Compiling prettyplease v0.2.37
+#12 5.952    Compiling untrusted v0.9.0
+#12 5.992    Compiling phf_generator v0.11.3
+#12 6.033    Compiling foreign-types-shared v0.1.1
+#12 6.054    Compiling clang-sys v1.8.1
+#12 6.062    Compiling pin-utils v0.1.0
+#12 6.070    Compiling indexmap v2.13.0
+#12 6.080    Compiling openssl v0.10.75
+#12 6.103    Compiling foreign-types v0.3.2
+#12 6.112    Compiling phf_codegen v0.11.3
+#12 6.224    Compiling syn v2.0.116
+#12 6.224    Compiling string_cache_codegen v0.5.4
+#12 6.239    Compiling sync_wrapper v1.0.2
+#12 6.256    Compiling zmij v1.0.21
+#12 6.260    Compiling native-tls v0.2.18
+#12 6.290    Compiling base64 v0.22.1
+#12 6.315    Compiling precomputed-hash v0.1.1
+#12 6.329    Compiling tower-layer v0.3.3
+#12 6.338    Compiling ipnet v2.11.0
+#12 6.339    Compiling unicode-width v0.2.2
+#12 6.367    Compiling linux-raw-sys v0.11.0
+#12 6.385    Compiling utf8parse v0.2.2
+#12 6.390    Compiling minimal-lexical v0.2.1
+#12 6.395    Compiling getrandom v0.4.1
+#12 6.442    Compiling mac v0.1.1
+#12 6.565    Compiling regex-syntax v0.8.9
+#12 6.565    Compiling rustls v0.23.36
+#12 6.582    Compiling futf v0.1.5
+#12 6.670    Compiling libloading v0.8.9
+#12 6.700    Compiling markup5ever v0.14.1
+#12 6.730    Compiling form_urlencoded v1.2.2
+#12 6.745    Compiling http-body v1.0.1
+#12 6.752    Compiling nom v7.1.3
+#12 6.756    Compiling ryu v1.0.23
+#12 6.774    Compiling dtoa v1.0.11
+#12 6.784    Compiling autocfg v1.5.0
+#12 6.854    Compiling http-body-util v0.1.3
+#12 6.909    Compiling openssl-sys v0.9.111
+#12 6.909    Compiling ring v0.17.14
+#12 6.952    Compiling rustversion v1.0.22
+#12 6.980    Compiling bindgen v0.71.1
+#12 7.002    Compiling utf-8 v0.7.6
+#12 7.021    Compiling either v1.15.0
+#12 7.032    Compiling subtle v2.6.1
+#12 7.120    Compiling cfg_aliases v0.1.1
+#12 7.146    Compiling serde_json v1.0.149
+#12 7.187    Compiling getrandom v0.3.4
+#12 7.187    Compiling openssl-probe v0.2.1
+#12 7.237    Compiling errno v0.3.14
+#12 7.263    Compiling socket2 v0.6.2
+#12 7.268    Compiling mio v1.1.1
+#12 7.286    Compiling getrandom v0.2.17
+#12 7.339    Compiling num-traits v0.2.19
+#12 7.370    Compiling signal-hook-registry v1.4.8
+#12 7.429    Compiling itertools v0.13.0
+#12 7.455    Compiling parking_lot v0.12.5
+#12 7.460    Compiling tendril v0.4.3
+#12 7.496    Compiling nix v0.28.0
+#12 7.572    Compiling crossbeam-epoch v0.9.18
+#12 7.601    Compiling block-buffer v0.10.4
+#12 7.658    Compiling crypto-common v0.1.7
+#12 7.706    Compiling dtoa-short v0.3.5
+#12 7.731    Compiling anstyle-parse v0.2.7
+#12 7.773    Compiling selectors v0.26.0
+#12 7.788    Compiling ahash v0.8.12
+#12 7.846    Compiling regex-automata v0.4.14
+#12 7.904    Compiling thiserror v1.0.69
+#12 7.966    Compiling colorchoice v1.0.4
+#12 8.017    Compiling mime v0.3.17
+#12 8.032    Compiling rayon-core v1.13.0
+#12 8.085    Compiling rustc-hash v2.1.1
+#12 8.106    Compiling utf8_iter v1.0.4
+#12 8.131    Compiling portable-atomic v1.13.1
+#12 8.156    Compiling byteorder v1.5.0
+#12 8.204    Compiling anstyle-query v1.1.5
+#12 8.211    Compiling same-file v1.0.6
+#12 8.251    Compiling anstyle v1.0.13
+#12 8.256    Compiling is_terminal_polyfill v1.70.2
+#12 8.323    Compiling walkdir v2.5.0
+#12 8.399    Compiling anstream v0.6.21
+#12 8.414    Compiling crossbeam-deque v0.8.6
+#12 8.420    Compiling digest v0.10.7
+#12 8.444    Compiling cexpr v0.6.0
+#12 8.451    Compiling fxhash v0.2.1
+#12 8.622    Compiling console v0.15.11
+#12 8.628    Compiling webpki-roots v1.0.6
+#12 8.679    Compiling cmake v0.1.57
+#12 8.690    Compiling aho-corasick v1.1.4
+#12 8.692    Compiling nibble_vec v0.1.0
+#12 8.696    Compiling servo_arc v0.4.3
+#12 8.710    Compiling endian-type v0.1.2
+#12 8.748    Compiling lazy_static v1.5.0
+#12 8.772    Compiling thiserror v2.0.18
+#12 8.807    Compiling fastrand v2.3.0
+#12 8.820    Compiling option-ext v0.2.0
+#12 8.852    Compiling iri-string v0.7.10
+#12 8.858    Compiling anyhow v1.0.101
+#12 8.881    Compiling clap_lex v1.0.0
+#12 8.893    Compiling heck v0.5.0
+#12 8.915    Compiling strsim v0.11.1
+#12 8.965    Compiling dirs-sys v0.5.0
+#12 9.056    Compiling tempfile v3.25.0
+#12 9.088    Compiling radix_trie v0.2.1
+#12 9.110    Compiling sharded-slab v0.1.7
+#12 9.187    Compiling clap_builder v4.5.59
+#12 9.270    Compiling fd-lock v4.0.4
+#12 9.412    Compiling serde_path_to_error v0.1.20
+#12 9.662    Compiling regex v1.12.3
+#12 9.839    Compiling getopts v0.2.24
+#12 9.863    Compiling tracing-log v0.2.0
+#12 9.973    Compiling encoding_rs v0.8.35
+#12 10.07    Compiling thread_local v1.1.9
+#12 10.21    Compiling ppv-lite86 v0.2.21
+#12 10.23    Compiling number_prefix v0.4.0
+#12 10.24    Compiling unicode-segmentation v1.12.0
+#12 10.28    Compiling synstructure v0.13.2
+#12 10.43    Compiling unsafe-libyaml v0.2.11
+#12 10.49    Compiling ego-tree v0.9.0
+#12 10.51    Compiling iana-time-zone v0.1.65
+#12 10.55    Compiling cpufeatures v0.2.17
+#12 10.72    Compiling rand_chacha v0.3.1
+#12 10.78    Compiling shell-words v1.1.1
+#12 10.79    Compiling matchit v0.7.3
+#12 10.81    Compiling nu-ansi-term v0.50.3
+#12 10.82    Compiling home v0.5.11
+#12 11.00    Compiling unicode-width v0.1.14
+#12 11.26    Compiling tracing-subscriber v0.3.22
+#12 11.27    Compiling rayon v1.11.0
+#12 11.33    Compiling chrono v0.4.43
+#12 11.74    Compiling sha2 v0.10.9
+#12 11.77    Compiling indicatif v0.17.11
+#12 11.94    Compiling rustyline v14.0.0
+#12 12.35    Compiling dirs v6.0.0
+#12 12.60    Compiling md-5 v0.10.6
+#12 12.66    Compiling uuid v1.21.0
+#12 12.79    Compiling urlencoding v2.1.3
+#12 13.24    Compiling zerofrom-derive v0.1.6
+#12 13.26    Compiling tokio-macros v2.6.0
+#12 13.28    Compiling yoke-derive v0.8.1
+#12 13.39    Compiling zerovec-derive v0.11.2
+#12 13.61    Compiling displaydoc v0.2.5
+#12 13.72    Compiling futures-macro v0.3.32
+#12 13.78    Compiling tracing-attributes v0.1.31
+#12 14.17    Compiling tokio v1.49.0
+#12 14.35    Compiling serde_derive v1.0.228
+#12 14.62    Compiling phf_macros v0.11.3
+#12 14.80    Compiling openssl-macros v0.1.1
+#12 14.87    Compiling futures-util v0.3.32
+#12 15.26    Compiling rustls-webpki v0.103.9
+#12 15.36    Compiling cssparser-macros v0.6.1
+#12 15.44    Compiling zerofrom v0.1.6
+#12 15.46    Compiling phf v0.11.3
+#12 15.63    Compiling yoke v0.8.1
+#12 15.74    Compiling derive_more v0.99.20
+#12 15.90    Compiling cssparser v0.34.0
+#12 15.93    Compiling zerovec v0.11.5
+#12 15.94    Compiling tracing v0.1.44
+#12 16.12    Compiling zerotrie v0.2.3
+#12 16.55    Compiling thiserror-impl v1.0.69
+#12 16.66    Compiling match_token v0.1.0
+#12 16.82    Compiling async-trait v0.1.89
+#12 16.86    Compiling thiserror-impl v2.0.18
+#12 16.97    Compiling tinystr v0.8.2
+#12 17.15    Compiling potential_utf v0.1.4
+#12 17.27    Compiling icu_locale_core v2.1.1
+#12 17.40    Compiling icu_collections v2.1.1
+#12 17.50    Compiling clap_derive v4.5.55
+#12 18.51    Compiling icu_provider v2.1.1
+#12 18.68    Compiling dialoguer v0.11.0
+#12 19.02    Compiling icu_properties v2.1.2
+#12 19.04    Compiling icu_normalizer v2.1.1
+#12 19.49    Compiling axum-core v0.4.5
+#12 19.83    Compiling futures-executor v0.3.32
+#12 20.25    Compiling futures v0.3.32
+#12 20.28    Compiling clap v4.5.59
+#12 20.33    Compiling string_cache v0.8.9
+#12 20.36    Compiling serde_urlencoded v0.7.1
+#12 20.50    Compiling serde_yaml v0.9.34+deprecated
+#12 20.67    Compiling ollama v0.5.0 (/usr/src/ollama)
+#12 20.90    Compiling idna_adapter v1.2.1
+#12 21.02    Compiling idna v1.1.0
+#12 21.73    Compiling tokio-util v0.7.18
+#12 21.87    Compiling tower v0.5.3
+#12 21.97    Compiling tokio-native-tls v0.3.1
+#12 21.99    Compiling html5ever v0.29.1
+#12 22.13    Compiling tokio-rustls v0.26.4
+#12 22.15    Compiling url v2.5.8
+#12 22.30    Compiling tokio-stream v0.1.18
+#12 22.56    Compiling tower-http v0.6.8
+#12 22.68    Compiling h2 v0.4.13
+#12 23.26    Compiling scraper v0.21.0
+#12 27.34    Compiling hyper v1.8.1
+#12 28.39    Compiling hyper-util v0.1.20
+#12 29.45    Compiling hyper-rustls v0.27.7
+#12 29.45    Compiling hyper-tls v0.6.0
+#12 29.45    Compiling axum v0.7.9
+#12 29.63    Compiling reqwest v0.12.28
+#12 787.1 warning: unused import: `bail`
+#12 787.1  --> src/cmd.rs:1:14
+#12 787.1   |
+#12 787.1 1 | use anyhow::{bail, Context, Result};
+#12 787.1   |              ^^^^
+#12 787.1   |
+#12 787.1   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+#12 787.1 
+#12 787.1 warning: unused import: `crate::progress::Progress`
+#12 787.1  --> src/cmd.rs:4:5
+#12 787.1   |
+#12 787.1 4 | use crate::progress::Progress;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `std::time::Duration`
+#12 787.1  --> src/cmd.rs:7:5
+#12 787.1   |
+#12 787.1 7 | use std::time::Duration;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `serde_json::Value`
+#12 787.1  --> src/convert/mod.rs:3:5
+#12 787.1   |
+#12 787.1 3 | use serde_json::Value;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `bail`
+#12 787.1  --> src/parser/modelfile.rs:1:22
+#12 787.1   |
+#12 787.1 1 | use anyhow::{Result, bail};
+#12 787.1   |                      ^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `PathBuf`
+#12 787.1  --> src/parser/modelfile.rs:3:23
+#12 787.1   |
+#12 787.1 3 | use std::path::{Path, PathBuf};
+#12 787.1   |                       ^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused imports: `Command`, `Modelfile`, and `parse`
+#12 787.1  --> src/parser/mod.rs:3:21
+#12 787.1   |
+#12 787.1 3 | pub use modelfile::{Modelfile, Command, parse};
+#12 787.1   |                     ^^^^^^^^^  ^^^^^^^  ^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `anyhow::Result`
+#12 787.1  --> src/runner.rs:1:5
+#12 787.1   |
+#12 787.1 1 | use anyhow::Result;
+#12 787.1   |     ^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `std::collections::HashMap`
+#12 787.1  --> src/runner.rs:2:5
+#12 787.1   |
+#12 787.1 2 | use std::collections::HashMap;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `std::sync::Arc`
+#12 787.1  --> src/runner.rs:3:5
+#12 787.1   |
+#12 787.1 3 | use std::sync::Arc;
+#12 787.1   |     ^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `tokio::sync::RwLock`
+#12 787.1  --> src/runner.rs:4:5
+#12 787.1   |
+#12 787.1 4 | use tokio::sync::RwLock;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `Stream`
+#12 787.1   --> src/server.rs:10:29
+#12 787.1    |
+#12 787.1 10 | use futures::stream::{self, Stream};
+#12 787.1    |                             ^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `time::Duration`
+#12 787.1   --> src/server.rs:12:97
+#12 787.1    |
+#12 787.1 12 | use std::{collections::HashMap, convert::Infallible, net::SocketAddr, path::PathBuf, sync::Arc, time::Duration};
+#12 787.1    |                                                                                                 ^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `uuid::Uuid`
+#12 787.1   --> src/server.rs:17:5
+#12 787.1    |
+#12 787.1 17 | use uuid::Uuid;
+#12 787.1    |     ^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `crate::api::Client`
+#12 787.1   --> src/server.rs:20:5
+#12 787.1    |
+#12 787.1 20 | use crate::api::Client;
+#12 787.1    |     ^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `anyhow::Result`
+#12 787.1  --> src/thinking.rs:2:9
+#12 787.1   |
+#12 787.1 2 |     use anyhow::Result;
+#12 787.1   |         ^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `std::collections::HashMap`
+#12 787.1  --> src/fs/mod.rs:1:5
+#12 787.1   |
+#12 787.1 1 | use std::collections::HashMap;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused imports: `BufReader` and `Seek`
+#12 787.1  --> src/fs/mod.rs:2:15
+#12 787.1   |
+#12 787.1 2 | use std::io::{BufReader, Read, Seek, SeekFrom};
+#12 787.1   |               ^^^^^^^^^        ^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `std::path::Path`
+#12 787.1  --> src/fs/mod.rs:3:5
+#12 787.1   |
+#12 787.1 3 | use std::path::Path;
+#12 787.1   |     ^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused imports: `SeekFrom` and `Seek`
+#12 787.1  --> src/fs/mod.rs:7:36
+#12 787.1   |
+#12 787.1 7 |     use std::io::{BufReader, Read, Seek, SeekFrom};
+#12 787.1   |                                    ^^^^  ^^^^^^^^
+#12 787.1 
+#12 787.1 warning: variant `Q2_K` should have an upper camel case name
+#12 787.1   --> src/fs/mod.rs:20:9
+#12 787.1    |
+#12 787.1 20 |         Q2_K,
+#12 787.1    |         ^^^^ help: convert the identifier to upper camel case: `Q2K`
+#12 787.1    |
+#12 787.1    = note: `#[warn(non_camel_case_types)]` (part of `#[warn(nonstandard_style)]`) on by default
+#12 787.1 
+#12 787.1 warning: variant `Q3_K` should have an upper camel case name
+#12 787.1   --> src/fs/mod.rs:21:9
+#12 787.1    |
+#12 787.1 21 |         Q3_K,
+#12 787.1    |         ^^^^ help: convert the identifier to upper camel case: `Q3K`
+#12 787.1 
+#12 787.1 warning: variant `Q4_K` should have an upper camel case name
+#12 787.1   --> src/fs/mod.rs:22:9
+#12 787.1    |
+#12 787.1 22 |         Q4_K,
+#12 787.1    |         ^^^^ help: convert the identifier to upper camel case: `Q4K`
+#12 787.1 
+#12 787.1 warning: variant `Q5_K` should have an upper camel case name
+#12 787.1   --> src/fs/mod.rs:23:9
+#12 787.1    |
+#12 787.1 23 |         Q5_K,
+#12 787.1    |         ^^^^ help: convert the identifier to upper camel case: `Q5K`
+#12 787.1 
+#12 787.1 warning: variant `Q6_K` should have an upper camel case name
+#12 787.1   --> src/fs/mod.rs:24:9
+#12 787.1    |
+#12 787.1 24 |         Q6_K,
+#12 787.1    |         ^^^^ help: convert the identifier to upper camel case: `Q6K`
+#12 787.1 
+#12 787.1 warning: variant `Q8_K` should have an upper camel case name
+#12 787.1   --> src/fs/mod.rs:25:9
+#12 787.1    |
+#12 787.1 25 |         Q8_K,
+#12 787.1    |         ^^^^ help: convert the identifier to upper camel case: `Q8K`
+#12 787.1 
+#12 787.1 warning: unused import: `parking_lot::RwLock`
+#12 787.1  --> src/models.rs:7:5
+#12 787.1   |
+#12 787.1 7 | use parking_lot::RwLock;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `std::collections::HashMap`
+#12 787.1  --> src/models.rs:8:5
+#12 787.1   |
+#12 787.1 8 | use std::collections::HashMap;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused imports: `Result` and `bail`
+#12 787.1  --> src/openai.rs:1:14
+#12 787.1   |
+#12 787.1 1 | use anyhow::{Result, bail};
+#12 787.1   |              ^^^^^^  ^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `std::collections::HashMap`
+#12 787.1  --> src/openai.rs:4:5
+#12 787.1   |
+#12 787.1 4 | use std::collections::HashMap;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `CStr`
+#12 787.1  --> src/llama.rs:4:16
+#12 787.1   |
+#12 787.1 4 | use std::ffi::{CStr, CString};
+#12 787.1   |                ^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `std::path::Path`
+#12 787.1  --> src/llama.rs:5:5
+#12 787.1   |
+#12 787.1 5 | use std::path::Path;
+#12 787.1   |     ^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.1 warning: unused import: `std::time::Instant`
+#12 787.1  --> src/llama.rs:7:5
+#12 787.1   |
+#12 787.1 7 | use std::time::Instant;
+#12 787.1   |     ^^^^^^^^^^^^^^^^^^
+#12 787.1 
+#12 787.2 warning: variable does not need to be mutable
+#12 787.2    --> src/runner.rs:395:21
+#12 787.2     |
+#12 787.2 395 |                 let mut runner = self.runners.remove(&name).unwrap();
+#12 787.2     |                     ----^^^^^^
+#12 787.2     |                     |
+#12 787.2     |                     help: remove this `mut`
+#12 787.2     |
+#12 787.2     = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+#12 787.2 
+#12 787.2 warning: variable does not need to be mutable
+#12 787.2    --> src/runner.rs:415:29
+#12 787.2     |
+#12 787.2 415 |                 if let Some(mut runner) = self.runners.remove(&name) {
+#12 787.2     |                             ----^^^^^^
+#12 787.2     |                             |
+#12 787.2     |                             help: remove this `mut`
+#12 787.2 
+#12 787.2 warning: variable does not need to be mutable
+#12 787.2    --> src/models.rs:130:49
+#12 787.2     |
+#12 787.2 130 |         pub async fn pull<F>(&self, name: &str, mut progress_callback: F) -> Result<PathBuf>
+#12 787.2     |                                                 ----^^^^^^^^^^^^^^^^^
+#12 787.2     |                                                 |
+#12 787.2     |                                                 help: remove this `mut`
+#12 787.2 
+#12 787.6 warning: unused import: `tokio_stream::StreamExt`
+#12 787.6   --> src/server.rs:14:5
+#12 787.6    |
+#12 787.6 14 | use tokio_stream::StreamExt as _;
+#12 787.6    |     ^^^^^^^^^^^^^^^^^^^^^^^
+#12 787.6 
+#12 787.6 warning: unused import: `futures_util::StreamExt`
+#12 787.6  --> src/tools.rs:2:5
+#12 787.6   |
+#12 787.6 2 | use futures_util::StreamExt;
+#12 787.6   |     ^^^^^^^^^^^^^^^^^^^^^^^
+#12 787.6 
+#12 787.7 warning: unused variable: `model`
+#12 787.7   --> src/cmd.rs:58:47
+#12 787.7    |
+#12 787.7 58 | fn handle_command(client: &Client, cmd: &str, model: &str) -> Result<()> {
+#12 787.7    |                                               ^^^^^ help: if this is intentional, prefix it with an underscore: `_model`
+#12 787.7    |
+#12 787.7    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+#12 787.7 
+#12 787.7 warning: unused variable: `insecure`
+#12 787.7    --> src/cmd.rs:316:26
+#12 787.7     |
+#12 787.7 316 | pub fn pull(model: &str, insecure: bool) -> Result<()> {
+#12 787.7     |                          ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_insecure`
+#12 787.7 
+#12 787.7 warning: unused variable: `tools`
+#12 787.7    --> src/runner.rs:213:54
+#12 787.7     |
+#12 787.7 213 |         pub fn chat(&mut self, messages: &[Message], tools: Option<&str>) -> Result<ChatResult> {
+#12 787.7     |                                                      ^^^^^ help: if this is intentional, prefix it with an underscore: `_tools`
+#12 787.7 
+#12 787.8 warning: unused variable: `e`
+#12 787.8    --> src/server.rs:482:13
+#12 787.8     |
+#12 787.8 482 |         Err(e) => {
+#12 787.8     |             ^ help: if this is intentional, prefix it with an underscore: `_e`
+#12 787.8 
+#12 787.9 warning: unused variable: `tx`
+#12 787.9    --> src/server.rs:900:14
+#12 787.9     |
+#12 787.9 900 |         let (tx, rx) = mpsc::channel::<Result<Event, Infallible>>(100);
+#12 787.9     |              ^^ help: if this is intentional, prefix it with an underscore: `_tx`
+#12 787.9 
+#12 788.0 warning: unused variable: `n_past`
+#12 788.0    --> src/llama.rs:202:40
+#12 788.0     |
+#12 788.0 202 |     pub fn eval(&self, tokens: &[i32], n_past: i32) -> Result<()> {
+#12 788.0     |                                        ^^^^^^ help: if this is intentional, prefix it with an underscore: `_n_past`
+#12 788.0 
+#12 788.0 warning: unused variable: `path`
+#12 788.0    --> src/llama.rs:320:17
+#12 788.0     |
+#12 788.0 320 |     pub fn load(path: &str) -> Result<Self> {
+#12 788.0     |                 ^^^^ help: if this is intentional, prefix it with an underscore: `_path`
+#12 788.0 
+#12 788.0 warning: variable does not need to be mutable
+#12 788.0    --> src/llama.rs:416:46
+#12 788.0     |
+#12 788.0 416 |     pub fn generate(&mut self, prompt: &str, mut callback: impl FnMut(String, bool)) -> Result<String> {
+#12 788.0     |                                              ----^^^^^^^^
+#12 788.0     |                                              |
+#12 788.0     |                                              help: remove this `mut`
+#12 788.0 
+#12 788.1 warning: methods `generate` and `chat` are never used
+#12 788.1   --> src/api/mod.rs:22:12
+#12 788.1    |
+#12 788.1 11 | impl Client {
+#12 788.1    | ----------- methods in this implementation
+#12 788.1 ...
+#12 788.1 22 |     pub fn generate(&self, request: &Value) -> Result<String> {
+#12 788.1    |            ^^^^^^^^
+#12 788.1 ...
+#12 788.1 31 |     pub fn chat(&self, request: &Value) -> Result<String> {
+#12 788.1    |            ^^^^
+#12 788.1    |
+#12 788.1    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+#12 788.1 
+#12 788.1 warning: fields `digest`, `parameters`, `template`, `projector_info`, `model_info`, and `messages` are never read
+#12 788.1    --> src/api/mod.rs:212:9
+#12 788.1     |
+#12 788.1 208 | pub struct ShowResponse {
+#12 788.1     |            ------------ fields in this struct
+#12 788.1 ...
+#12 788.1 212 |     pub digest: Option<String>,
+#12 788.1     |         ^^^^^^
+#12 788.1 ...
+#12 788.1 216 |     pub parameters: Option<String>,
+#12 788.1     |         ^^^^^^^^^^
+#12 788.1 217 |     pub template: Option<String>,
+#12 788.1     |         ^^^^^^^^
+#12 788.1 ...
+#12 788.1 220 |     pub projector_info: HashMap<String, Value>,
+#12 788.1     |         ^^^^^^^^^^^^^^
+#12 788.1 221 |     #[serde(default)]
+#12 788.1 222 |     pub model_info: HashMap<String, Value>,
+#12 788.1     |         ^^^^^^^^^^
+#12 788.1 223 |     #[serde(default)]
+#12 788.1 224 |     pub messages: Vec<Message>,
+#12 788.1     |         ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: fields `parent_model`, `format`, and `families` are never read
+#12 788.1    --> src/api/mod.rs:229:9
+#12 788.1     |
+#12 788.1 228 | pub struct ModelDetails {
+#12 788.1     |            ------------ fields in this struct
+#12 788.1 229 |     pub parent_model: Option<String>,
+#12 788.1     |         ^^^^^^^^^^^^
+#12 788.1 230 |     pub format: Option<String>,
+#12 788.1     |         ^^^^^^
+#12 788.1 231 |     pub family: Option<String>,
+#12 788.1 232 |     pub families: Option<Vec<String>>,
+#12 788.1     |         ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `CreateRequest` is never constructed
+#12 788.1    --> src/api/mod.rs:246:12
+#12 788.1     |
+#12 788.1 246 | pub struct CreateRequest {
+#12 788.1     |            ^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: fields `details` and `remote_host` are never read
+#12 788.1    --> src/api/mod.rs:273:9
+#12 788.1     |
+#12 788.1 268 | pub struct ModelInfo {
+#12 788.1     |            --------- fields in this struct
+#12 788.1 ...
+#12 788.1 273 |     pub details: Option<ModelDetails>,
+#12 788.1     |         ^^^^^^^
+#12 788.1 ...
+#12 788.1 277 |     pub remote_host: String,
+#12 788.1     |         ^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: fields `modified_at` and `context_length` are never read
+#12 788.1    --> src/api/mod.rs:283:9
+#12 788.1     |
+#12 788.1 281 | pub struct RunningModel {
+#12 788.1     |            ------------ fields in this struct
+#12 788.1 282 |     pub name: String,
+#12 788.1 283 |     pub modified_at: i64,
+#12 788.1     |         ^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 289 |     pub context_length: u32,
+#12 788.1     |         ^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: field `model` is never read
+#12 788.1    --> src/api/mod.rs:295:9
+#12 788.1     |
+#12 788.1 293 | pub struct EmbedResponse {
+#12 788.1     |            ------------- field in this struct
+#12 788.1 294 |     pub embeddings: Vec<Vec<f32>>,
+#12 788.1 295 |     pub model: String,
+#12 788.1     |         ^^^^^
+#12 788.1 
+#12 788.1 warning: struct `TensorInfo` is never constructed
+#12 788.1   --> src/convert/mod.rs:10:12
+#12 788.1    |
+#12 788.1 10 | pub struct TensorInfo {
+#12 788.1    |            ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `SafetensorsHeader` is never constructed
+#12 788.1   --> src/convert/mod.rs:17:12
+#12 788.1    |
+#12 788.1 17 | pub struct SafetensorsHeader {
+#12 788.1    |            ^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Safetensors` is never constructed
+#12 788.1   --> src/convert/mod.rs:24:12
+#12 788.1    |
+#12 788.1 24 | pub struct Safetensors {
+#12 788.1    |            ^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `load` and `get_tensor_data` are never used
+#12 788.1   --> src/convert/mod.rs:30:12
+#12 788.1    |
+#12 788.1 29 | impl Safetensors {
+#12 788.1    | ---------------- associated items in this implementation
+#12 788.1 30 |     pub fn load<P: AsRef<Path>>(path: P) -> Result<Self> {
+#12 788.1    |            ^^^^
+#12 788.1 ...
+#12 788.1 54 |     pub fn get_tensor_data<'a>(&self, file: &mut File, name: &str) -> Result<Vec<u8>> {
+#12 788.1    |            ^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `EnvConfig` is never constructed
+#12 788.1  --> src/envconfig.rs:3:12
+#12 788.1   |
+#12 788.1 3 | pub struct EnvConfig {
+#12 788.1   |            ^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Host` is never constructed
+#12 788.1  --> src/envconfig.rs:9:12
+#12 788.1   |
+#12 788.1 9 | pub struct Host {
+#12 788.1   |            ^^^^
+#12 788.1 
+#12 788.1 warning: associated function `from_env` is never used
+#12 788.1   --> src/envconfig.rs:15:12
+#12 788.1    |
+#12 788.1 14 | impl EnvConfig {
+#12 788.1    | -------------- associated function in this implementation
+#12 788.1 15 |     pub fn from_env() -> Self {
+#12 788.1    |            ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated function `from_env` is never used
+#12 788.1   --> src/envconfig.rs:32:12
+#12 788.1    |
+#12 788.1 31 | impl Host {
+#12 788.1    | --------- associated function in this implementation
+#12 788.1 32 |     pub fn from_env() -> Self {
+#12 788.1    |            ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `human_number` is never used
+#12 788.1   --> src/format.rs:49:8
+#12 788.1    |
+#12 788.1 49 | pub fn human_number(n: u64) -> String {
+#12 788.1    |        ^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `from_file` and `to_api_request` are never used
+#12 788.1   --> src/parser/modelfile.rs:46:12
+#12 788.1    |
+#12 788.1 45 | impl Modelfile {
+#12 788.1    | -------------- associated items in this implementation
+#12 788.1 46 |     pub fn from_file<P: AsRef<Path>>(path: P) -> Result<Self> {
+#12 788.1    |            ^^^^^^^^^
+#12 788.1 ...
+#12 788.1 52 |     pub fn to_api_request(&self) -> Result<crate::api::CreateRequest> {
+#12 788.1    |            ^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Progress` is never constructed
+#12 788.1  --> src/progress.rs:4:12
+#12 788.1   |
+#12 788.1 4 | pub struct Progress {
+#12 788.1   |            ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new`, `spinner`, `stop`, and `stop_and_clear` are never used
+#12 788.1   --> src/progress.rs:9:12
+#12 788.1    |
+#12 788.1  8 | impl Progress {
+#12 788.1    | ------------- associated items in this implementation
+#12 788.1  9 |     pub fn new() -> Self {
+#12 788.1    |            ^^^
+#12 788.1 ...
+#12 788.1 13 |     pub fn spinner(&mut self, message: &str) {
+#12 788.1    |            ^^^^^^^
+#12 788.1 ...
+#12 788.1 25 |     pub fn stop(&self) {
+#12 788.1    |            ^^^^
+#12 788.1 ...
+#12 788.1 31 |     pub fn stop_and_clear(&self) {
+#12 788.1    |            ^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Bar` is never constructed
+#12 788.1   --> src/progress.rs:44:12
+#12 788.1    |
+#12 788.1 44 | pub struct Bar {
+#12 788.1    |            ^^^
+#12 788.1 
+#12 788.1 warning: associated items `new` and `set` are never used
+#12 788.1   --> src/progress.rs:49:12
+#12 788.1    |
+#12 788.1 48 | impl Bar {
+#12 788.1    | -------- associated items in this implementation
+#12 788.1 49 |     pub fn new(message: &str, total: u64, current: u64) -> Self {
+#12 788.1    |            ^^^
+#12 788.1 ...
+#12 788.1 62 |     pub fn set(&self, current: u64) {
+#12 788.1    |            ^^^
+#12 788.1 
+#12 788.1 warning: multiple fields are never read
+#12 788.1   --> src/runner.rs:24:13
+#12 788.1    |
+#12 788.1 13 |     pub struct RunnerOptions {
+#12 788.1    |                ------------- fields in this struct
+#12 788.1 ...
+#12 788.1 24 |         pub num_gqa: i32,
+#12 788.1    |             ^^^^^^^
+#12 788.1 25 |         pub rope_freq_base: f32,
+#12 788.1    |             ^^^^^^^^^^^^^^
+#12 788.1 26 |         pub rope_freq_scale: f32,
+#12 788.1    |             ^^^^^^^^^^^^^^^
+#12 788.1 27 |         pub yarn_ext_factor: f32,
+#12 788.1    |             ^^^^^^^^^^^^^^^
+#12 788.1 28 |         pub yarn_attn_factor: f32,
+#12 788.1    |             ^^^^^^^^^^^^^^^^
+#12 788.1 29 |         pub yarn_beta_fast: f32,
+#12 788.1    |             ^^^^^^^^^^^^^^
+#12 788.1 30 |         pub yarn_beta_slow: f32,
+#12 788.1    |             ^^^^^^^^^^^^^^
+#12 788.1 31 |         pub raw: bool,
+#12 788.1    |             ^^^
+#12 788.1    |
+#12 788.1    = note: `RunnerOptions` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+#12 788.1 
+#12 788.1 warning: struct `ToolCall` is never constructed
+#12 788.1    --> src/runner.rs:101:16
+#12 788.1     |
+#12 788.1 101 |     pub struct ToolCall {
+#12 788.1     |                ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `FunctionCall` is never constructed
+#12 788.1    --> src/runner.rs:107:16
+#12 788.1     |
+#12 788.1 107 |     pub struct FunctionCall {
+#12 788.1     |                ^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: field `done` is never read
+#12 788.1    --> src/runner.rs:115:13
+#12 788.1     |
+#12 788.1 113 |     pub struct GenerateResult {
+#12 788.1     |                -------------- field in this struct
+#12 788.1 114 |         pub response: String,
+#12 788.1 115 |         pub done: bool,
+#12 788.1     |             ^^^^
+#12 788.1     |
+#12 788.1     = note: `GenerateResult` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+#12 788.1 
+#12 788.1 warning: field `done` is never read
+#12 788.1    --> src/runner.rs:128:13
+#12 788.1     |
+#12 788.1 126 |     pub struct ChatResult {
+#12 788.1     |                ---------- field in this struct
+#12 788.1 127 |         pub message: Message,
+#12 788.1 128 |         pub done: bool,
+#12 788.1     |             ^^^^
+#12 788.1     |
+#12 788.1     = note: `ChatResult` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+#12 788.1 
+#12 788.1 warning: struct `EmbedResult` is never constructed
+#12 788.1    --> src/runner.rs:135:16
+#12 788.1     |
+#12 788.1 135 |     pub struct EmbedResult {
+#12 788.1     |                ^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Runner` is never constructed
+#12 788.1    --> src/runner.rs:141:16
+#12 788.1     |
+#12 788.1 141 |     pub struct Runner {
+#12 788.1     |                ^^^^^^
+#12 788.1 
+#12 788.1 warning: multiple associated items are never used
+#12 788.1    --> src/runner.rs:149:16
+#12 788.1     |
+#12 788.1 148 |     impl Runner {
+#12 788.1     |     ----------- associated items in this implementation
+#12 788.1 149 |         pub fn new(model_path: &str) -> Result<Self> {
+#12 788.1     |                ^^^
+#12 788.1 ...
+#12 788.1 158 |         pub fn with_options(mut self, options: RunnerOptions) -> Self {
+#12 788.1     |                ^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 163 |         pub fn load(&mut self) -> Result<()> {
+#12 788.1     |                ^^^^
+#12 788.1 ...
+#12 788.1 188 |         pub fn generate(&mut self, prompt: &str, _template: Option<&str>) -> Result<GenerateResult> {
+#12 788.1     |                ^^^^^^^^
+#12 788.1 ...
+#12 788.1 213 |         pub fn chat(&mut self, messages: &[Message], tools: Option<&str>) -> Result<ChatResult> {
+#12 788.1     |                ^^^^
+#12 788.1 ...
+#12 788.1 276 |         pub fn embed(&mut self, input: &str, _dimensions: Option<usize>) -> Result<EmbedResult> {
+#12 788.1     |                ^^^^^
+#12 788.1 ...
+#12 788.1 298 |         pub fn is_loaded(&self) -> bool {
+#12 788.1     |                ^^^^^^^^^
+#12 788.1 ...
+#12 788.1 302 |         pub fn unload(&mut self) {
+#12 788.1     |                ^^^^^^
+#12 788.1 
+#12 788.1 warning: function `detect_tool_call` is never used
+#12 788.1    --> src/runner.rs:308:8
+#12 788.1     |
+#12 788.1 308 |     fn detect_tool_call(response: &str) -> Option<ToolCall> {
+#12 788.1     |        ^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `simple_hash` is never used
+#12 788.1    --> src/runner.rs:322:8
+#12 788.1     |
+#12 788.1 322 |     fn simple_hash(s: &str) -> u64 {
+#12 788.1     |        ^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `ScheduledRunner` is never constructed
+#12 788.1    --> src/runner.rs:341:16
+#12 788.1     |
+#12 788.1 341 |     pub struct ScheduledRunner {
+#12 788.1     |                ^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Scheduler` is never constructed
+#12 788.1    --> src/runner.rs:349:16
+#12 788.1     |
+#12 788.1 349 |     pub struct Scheduler {
+#12 788.1     |                ^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new`, `get_runner`, `evict_oldest`, `cleanup`, and `runner_count` are never used
+#12 788.1    --> src/runner.rs:356:16
+#12 788.1     |
+#12 788.1 355 |     impl Scheduler {
+#12 788.1     |     -------------- associated items in this implementation
+#12 788.1 356 |         pub fn new(max_models: usize) -> Self {
+#12 788.1     |                ^^^
+#12 788.1 ...
+#12 788.1 364 |         pub async fn get_runner(&mut self, model_name: &str, model_path: &str) -> Result<Arc<RwLock<Runner>>> {
+#12 788.1     |                      ^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 390 |         async fn evict_oldest(&mut self) -> Result<()> {
+#12 788.1     |                  ^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 401 |         pub async fn cleanup(&mut self) {
+#12 788.1     |                      ^^^^^^^
+#12 788.1 ...
+#12 788.1 421 |         pub fn runner_count(&self) -> usize {
+#12 788.1     |                ^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: fields `host`, `port`, `context_size`, and `gpu_layers` are never read
+#12 788.1   --> src/server.rs:32:9
+#12 788.1    |
+#12 788.1 31 | pub struct ServerConfig {
+#12 788.1    |            ------------ fields in this struct
+#12 788.1 32 |     pub host: String,
+#12 788.1    |         ^^^^
+#12 788.1 33 |     pub port: u16,
+#12 788.1    |         ^^^^
+#12 788.1 34 |     pub models_dir: String,
+#12 788.1 35 |     pub context_size: usize,
+#12 788.1    |         ^^^^^^^^^^^^
+#12 788.1 36 |     pub gpu_layers: i32,
+#12 788.1    |         ^^^^^^^^^^
+#12 788.1    |
+#12 788.1    = note: `ServerConfig` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+#12 788.1 
+#12 788.1 warning: multiple fields are never read
+#12 788.1   --> src/server.rs:42:9
+#12 788.1    |
+#12 788.1 40 | pub struct Model {
+#12 788.1    |            ----- fields in this struct
+#12 788.1 41 |     pub name: String,
+#12 788.1 42 |     pub path: String,
+#12 788.1    |         ^^^^
+#12 788.1 43 |     pub size: u64,
+#12 788.1    |         ^^^^
+#12 788.1 44 |     pub modified_at: i64,
+#12 788.1 45 |     pub details: ModelDetails,
+#12 788.1    |         ^^^^^^^
+#12 788.1 46 |     pub capabilities: Vec<String>,
+#12 788.1    |         ^^^^^^^^^^^^
+#12 788.1 47 |     pub template: Option<String>,
+#12 788.1    |         ^^^^^^^^
+#12 788.1 48 |     pub system: Option<String>,
+#12 788.1    |         ^^^^^^
+#12 788.1 49 |     pub options: HashMap<String, serde_json::Value>,
+#12 788.1    |         ^^^^^^^
+#12 788.1    |
+#12 788.1    = note: `Model` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+#12 788.1 
+#12 788.1 warning: multiple fields are never read
+#12 788.1   --> src/server.rs:66:9
+#12 788.1    |
+#12 788.1 63 | pub struct GenerateRequest {
+#12 788.1    |            --------------- fields in this struct
+#12 788.1 ...
+#12 788.1 66 |     pub suffix: Option<String>,
+#12 788.1    |         ^^^^^^
+#12 788.1 ...
+#12 788.1 69 |     pub stream: bool,
+#12 788.1    |         ^^^^^^
+#12 788.1 70 |     pub context: Option<Vec<i32>>,
+#12 788.1    |         ^^^^^^^
+#12 788.1 71 |     pub images: Option<Vec<String>>,
+#12 788.1    |         ^^^^^^
+#12 788.1 72 |     pub format: Option<String>,
+#12 788.1    |         ^^^^^^
+#12 788.1 73 |     pub system: Option<String>,
+#12 788.1    |         ^^^^^^
+#12 788.1 74 |     pub template: Option<String>,
+#12 788.1    |         ^^^^^^^^
+#12 788.1 75 |     pub raw: Option<bool>,
+#12 788.1    |         ^^^
+#12 788.1 76 |     pub keep_alive: Option<i64>,
+#12 788.1    |         ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: fields `tools`, `stream`, `format`, `raw`, `keep_alive`, and `tool_choice` are never read
+#12 788.1   --> src/server.rs:85:9
+#12 788.1    |
+#12 788.1 82 | pub struct ChatRequest {
+#12 788.1    |            ----------- fields in this struct
+#12 788.1 ...
+#12 788.1 85 |     pub tools: Option<Vec<Tool>>,
+#12 788.1    |         ^^^^^
+#12 788.1 ...
+#12 788.1 88 |     pub stream: bool,
+#12 788.1    |         ^^^^^^
+#12 788.1 89 |     pub format: Option<String>,
+#12 788.1    |         ^^^^^^
+#12 788.1 90 |     pub raw: Option<bool>,
+#12 788.1    |         ^^^
+#12 788.1 91 |     pub keep_alive: Option<i64>,
+#12 788.1    |         ^^^^^^^^^^
+#12 788.1 92 |     pub tool_choice: Option<ToolChoice>,
+#12 788.1    |         ^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: fields `truncate`, `dimensions`, and `keep_alive` are never read
+#12 788.1    --> src/server.rs:181:9
+#12 788.1     |
+#12 788.1 178 | pub struct EmbedRequest {
+#12 788.1     |            ------------ fields in this struct
+#12 788.1 ...
+#12 788.1 181 |     pub truncate: Option<bool>,
+#12 788.1     |         ^^^^^^^^
+#12 788.1 182 |     pub dimensions: Option<i32>,
+#12 788.1     |         ^^^^^^^^^^
+#12 788.1 183 |     pub keep_alive: Option<i64>,
+#12 788.1     |         ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `ProgressResponse` is never constructed
+#12 788.1    --> src/server.rs:245:12
+#12 788.1     |
+#12 788.1 245 | pub struct ProgressResponse {
+#12 788.1     |            ^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Template` is never constructed
+#12 788.1  --> src/template.rs:5:16
+#12 788.1   |
+#12 788.1 5 |     pub struct Template {
+#12 788.1   |                ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new` and `execute` are never used
+#12 788.1   --> src/template.rs:10:16
+#12 788.1    |
+#12 788.1  9 |     impl Template {
+#12 788.1    |     ------------- associated items in this implementation
+#12 788.1 10 |         pub fn new(template: &str) -> Self {
+#12 788.1    |                ^^^
+#12 788.1 ...
+#12 788.1 16 |         pub fn execute(&self, data: &HashMap<String, String>) -> Result<String> {
+#12 788.1    |                ^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `chat_template` is never used
+#12 788.1   --> src/template.rs:28:12
+#12 788.1    |
+#12 788.1 28 |     pub fn chat_template(system: &str, messages: &[Message]) -> Result<String> {
+#12 788.1    |            ^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `capitalize` is never used
+#12 788.1   --> src/template.rs:44:8
+#12 788.1    |
+#12 788.1 44 |     fn capitalize(s: &str) -> String {
+#12 788.1    |        ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Message` is never constructed
+#12 788.1   --> src/template.rs:53:16
+#12 788.1    |
+#12 788.1 53 |     pub struct Message {
+#12 788.1    |                ^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `ThinkingParser` is never constructed
+#12 788.1  --> src/thinking.rs:4:16
+#12 788.1   |
+#12 788.1 4 |     pub struct ThinkingParser {
+#12 788.1   |                ^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new`, `parse`, and `wrap` are never used
+#12 788.1   --> src/thinking.rs:10:16
+#12 788.1    |
+#12 788.1  9 |     impl ThinkingParser {
+#12 788.1    |     ------------------- associated items in this implementation
+#12 788.1 10 |         pub fn new() -> Self {
+#12 788.1    |                ^^^
+#12 788.1 ...
+#12 788.1 17 |         pub fn parse(&self, content: &str) -> ThinkingResult {
+#12 788.1    |                ^^^^^
+#12 788.1 ...
+#12 788.1 36 |         pub fn wrap(&self, thinking: &str, content: &str) -> String {
+#12 788.1    |                ^^^^
+#12 788.1 
+#12 788.1 warning: struct `ThinkingResult` is never constructed
+#12 788.1   --> src/thinking.rs:46:16
+#12 788.1    |
+#12 788.1 46 |     pub struct ThinkingResult {
+#12 788.1    |                ^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `infer_thinking_option` is never used
+#12 788.1   --> src/thinking.rs:51:12
+#12 788.1    |
+#12 788.1 51 |     pub fn infer_thinking_option(capabilities: &[String], user_option: Option<&str>) -> Option<String> {
+#12 788.1    |            ^^^^^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Sampler` is never constructed
+#12 788.1  --> src/sample.rs:4:16
+#12 788.1   |
+#12 788.1 4 |     pub struct Sampler {
+#12 788.1   |                ^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new` and `sample` are never used
+#12 788.1   --> src/sample.rs:18:16
+#12 788.1    |
+#12 788.1 17 |     impl Sampler {
+#12 788.1    |     ------------ associated items in this implementation
+#12 788.1 18 |         pub fn new() -> Self {
+#12 788.1    |                ^^^
+#12 788.1 ...
+#12 788.1 27 |         pub fn sample(&self, logits: &[f32]) -> usize {
+#12 788.1    |                ^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Transforms` is never constructed
+#12 788.1   --> src/sample.rs:78:16
+#12 788.1    |
+#12 788.1 78 |     pub struct Transforms;
+#12 788.1    |                ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated function `apply` is never used
+#12 788.1   --> src/sample.rs:81:16
+#12 788.1    |
+#12 788.1 80 |     impl Transforms {
+#12 788.1    |     --------------- associated function in this implementation
+#12 788.1 81 |         pub fn apply(json_output: &str) -> String {
+#12 788.1    |                ^^^^^
+#12 788.1 
+#12 788.1 warning: struct `BufferSeeker` is never constructed
+#12 788.1    --> src/fs/mod.rs:358:12
+#12 788.1     |
+#12 788.1 358 | pub struct BufferSeeker {
+#12 788.1     |            ^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new`, `from_file`, `read`, and `seek` are never used
+#12 788.1    --> src/fs/mod.rs:364:12
+#12 788.1     |
+#12 788.1 363 | impl BufferSeeker {
+#12 788.1     | ----------------- associated items in this implementation
+#12 788.1 364 |     pub fn new() -> Self {
+#12 788.1     |            ^^^
+#12 788.1 ...
+#12 788.1 371 |     pub fn from_file(path: &std::path::Path) -> std::io::Result<Self> {
+#12 788.1     |            ^^^^^^^^^
+#12 788.1 ...
+#12 788.1 379 |     pub fn read(&mut self, size: usize) -> std::io::Result<&[u8]> {
+#12 788.1     |            ^^^^
+#12 788.1 ...
+#12 788.1 386 |     pub fn seek(&mut self, pos: SeekFrom) -> std::io::Result<u64> {
+#12 788.1     |            ^^^^
+#12 788.1 
+#12 788.1 warning: enum `DataType` is never used
+#12 788.1   --> src/fs/mod.rs:11:14
+#12 788.1    |
+#12 788.1 11 |     pub enum DataType {
+#12 788.1    |              ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `from_u8` and `bytes_per_element` are never used
+#12 788.1   --> src/fs/mod.rs:37:16
+#12 788.1    |
+#12 788.1 36 |     impl DataType {
+#12 788.1    |     ------------- associated items in this implementation
+#12 788.1 37 |         pub fn from_u8(val: u8) -> Self {
+#12 788.1    |                ^^^^^^^
+#12 788.1 ...
+#12 788.1 59 |         pub fn bytes_per_element(&self) -> u32 {
+#12 788.1    |                ^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: enum `GGUFValue` is never used
+#12 788.1   --> src/fs/mod.rs:88:14
+#12 788.1    |
+#12 788.1 88 |     pub enum GGUFValue {
+#12 788.1    |              ^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: method `type_name` is never used
+#12 788.1   --> src/fs/mod.rs:99:16
+#12 788.1    |
+#12 788.1 98 |     impl GGUFValue {
+#12 788.1    |     -------------- method in this implementation
+#12 788.1 99 |         pub fn type_name(&self) -> &str {
+#12 788.1    |                ^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `TensorInfo` is never constructed
+#12 788.1    --> src/fs/mod.rs:113:16
+#12 788.1     |
+#12 788.1 113 |     pub struct TensorInfo {
+#12 788.1     |                ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: method `size` is never used
+#12 788.1    --> src/fs/mod.rs:122:16
+#12 788.1     |
+#12 788.1 121 |     impl TensorInfo {
+#12 788.1     |     --------------- method in this implementation
+#12 788.1 122 |         pub fn size(&self) -> u64 {
+#12 788.1     |                ^^^^
+#12 788.1 
+#12 788.1 warning: struct `GGUFReader` is never constructed
+#12 788.1    --> src/fs/mod.rs:136:16
+#12 788.1     |
+#12 788.1 136 |     pub struct GGUFReader {
+#12 788.1     |                ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: multiple associated items are never used
+#12 788.1    --> src/fs/mod.rs:144:16
+#12 788.1     |
+#12 788.1 143 |     impl GGUFReader {
+#12 788.1     |     --------------- associated items in this implementation
+#12 788.1 144 |         pub fn open(path: &Path) -> std::io::Result<Self> {
+#12 788.1     |                ^^^^
+#12 788.1 ...
+#12 788.1 207 |         pub fn get_metadata_string(&self, key: &str) -> Option<String> {
+#12 788.1     |                ^^^^^^^^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 214 |         pub fn get_metadata_int(&self, key: &str) -> Option<i64> {
+#12 788.1     |                ^^^^^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 222 |         pub fn get_metadata_float(&self, key: &str) -> Option<f32> {
+#12 788.1     |                ^^^^^^^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 229 |         pub fn model_family(&self) -> Option<String> {
+#12 788.1     |                ^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 233 |         pub fn parameter_count(&self) -> Option<i64> {
+#12 788.1     |                ^^^^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 237 |         pub fn context_length(&self) -> Option<i64> {
+#12 788.1     |                ^^^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 241 |         pub fn embedding_length(&self) -> Option<i64> {
+#12 788.1     |                ^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `read_u64` is never used
+#12 788.1    --> src/fs/mod.rs:246:8
+#12 788.1     |
+#12 788.1 246 |     fn read_u64<R: Read>(reader: &mut R) -> std::io::Result<u64> {
+#12 788.1     |        ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `read_string` is never used
+#12 788.1    --> src/fs/mod.rs:252:8
+#12 788.1     |
+#12 788.1 252 |     fn read_string<R: Read>(reader: &mut R) -> std::io::Result<String> {
+#12 788.1     |        ^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `read_value` is never used
+#12 788.1    --> src/fs/mod.rs:269:8
+#12 788.1     |
+#12 788.1 269 |     fn read_value<R: Read>(reader: &mut R, value_type: u8) -> std::io::Result<GGUFValue> {
+#12 788.1     |        ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: trait `ReadExt` is never used
+#12 788.1    --> src/fs/mod.rs:313:15
+#12 788.1     |
+#12 788.1 313 |     pub trait ReadExt {
+#12 788.1     |               ^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `GGMLType` is never constructed
+#12 788.1    --> src/fs/mod.rs:328:16
+#12 788.1     |
+#12 788.1 328 |     pub struct GGMLType {
+#12 788.1     |                ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `get_type` is never used
+#12 788.1    --> src/fs/mod.rs:334:12
+#12 788.1     |
+#12 788.1 334 |     pub fn get_type(name: &str) -> Option<GGMLType> {
+#12 788.1     |            ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `type_size` is never used
+#12 788.1    --> src/fs/mod.rs:349:12
+#12 788.1     |
+#12 788.1 349 |     pub fn type_size(name: &str) -> Option<u64> {
+#12 788.1     |            ^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `type_elements` is never used
+#12 788.1    --> src/fs/mod.rs:353:12
+#12 788.1     |
+#12 788.1 353 |     pub fn type_elements(name: &str) -> Option<u64> {
+#12 788.1     |            ^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `SearchResult` is never constructed
+#12 788.1    --> src/tools.rs:256:12
+#12 788.1     |
+#12 788.1 256 | pub struct SearchResult {
+#12 788.1     |            ^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `FetchResult` is never constructed
+#12 788.1    --> src/tools.rs:263:12
+#12 788.1     |
+#12 788.1 263 | pub struct FetchResult {
+#12 788.1     |            ^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `BashResult` is never constructed
+#12 788.1    --> src/tools.rs:272:12
+#12 788.1     |
+#12 788.1 272 | pub struct BashResult {
+#12 788.1     |            ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `ToolExecutor` is never constructed
+#12 788.1    --> src/tools.rs:282:12
+#12 788.1     |
+#12 788.1 282 | pub struct ToolExecutor {
+#12 788.1     |            ^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new`, `execute`, and `list_tools` are never used
+#12 788.1    --> src/tools.rs:289:12
+#12 788.1     |
+#12 788.1 288 | impl ToolExecutor {
+#12 788.1     | ----------------- associated items in this implementation
+#12 788.1 289 |     pub fn new() -> Self {
+#12 788.1     |            ^^^
+#12 788.1 ...
+#12 788.1 297 |     pub fn execute(&self, tool_name: &str, arguments: &HashMap<String, serde_json::Value>) -> Result<String> {
+#12 788.1     |            ^^^^^^^
+#12 788.1 ...
+#12 788.1 359 |     pub fn list_tools(&self) -> Vec<ToolDefinition> {
+#12 788.1     |            ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `ToolDefinition` is never constructed
+#12 788.1    --> src/tools.rs:414:12
+#12 788.1     |
+#12 788.1 414 | pub struct ToolDefinition {
+#12 788.1     |            ^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `ParameterDefinition` is never constructed
+#12 788.1    --> src/tools.rs:421:12
+#12 788.1     |
+#12 788.1 421 | pub struct ParameterDefinition {
+#12 788.1     |            ^^^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `WebSearch` is never constructed
+#12 788.1   --> src/tools.rs:13:16
+#12 788.1    |
+#12 788.1 13 |     pub struct WebSearch {
+#12 788.1    |                ^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new` and `search` are never used
+#12 788.1   --> src/tools.rs:18:16
+#12 788.1    |
+#12 788.1 17 |     impl WebSearch {
+#12 788.1    |     -------------- associated items in this implementation
+#12 788.1 18 |         pub fn new() -> Self {
+#12 788.1    |                ^^^
+#12 788.1 ...
+#12 788.1 27 |         pub fn search(&self, query: &str, num_results: usize) -> Result<Vec<SearchResult>> {
+#12 788.1    |                ^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `WebFetch` is never constructed
+#12 788.1   --> src/tools.rs:87:16
+#12 788.1    |
+#12 788.1 87 |     pub struct WebFetch {
+#12 788.1    |                ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new`, `fetch`, and `fetch_text` are never used
+#12 788.1    --> src/tools.rs:92:16
+#12 788.1     |
+#12 788.1  91 |     impl WebFetch {
+#12 788.1     |     ------------- associated items in this implementation
+#12 788.1  92 |         pub fn new() -> Self {
+#12 788.1     |                ^^^
+#12 788.1 ...
+#12 788.1 102 |         pub fn fetch(&self, url: &str) -> Result<FetchResult> {
+#12 788.1     |                ^^^^^
+#12 788.1 ...
+#12 788.1 134 |         pub fn fetch_text(&self, url: &str) -> Result<String> {
+#12 788.1     |                ^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `extract_text_from_html` is never used
+#12 788.1    --> src/tools.rs:145:8
+#12 788.1     |
+#12 788.1 145 |     fn extract_text_from_html(html: &str) -> String {
+#12 788.1     |        ^^^^^^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `BashExecutor` is never constructed
+#12 788.1    --> src/tools.rs:189:16
+#12 788.1     |
+#12 788.1 189 |     pub struct BashExecutor {
+#12 788.1     |                ^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `new`, `with_timeout`, `execute`, and `execute_interactive` are never used
+#12 788.1    --> src/tools.rs:194:16
+#12 788.1     |
+#12 788.1 193 |     impl BashExecutor {
+#12 788.1     |     ----------------- associated items in this implementation
+#12 788.1 194 |         pub fn new() -> Self {
+#12 788.1     |                ^^^
+#12 788.1 ...
+#12 788.1 200 |         pub fn with_timeout(mut self, seconds: u64) -> Self {
+#12 788.1     |                ^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 205 |         pub fn execute(&self, command: &str) -> Result<BashResult> {
+#12 788.1     |                ^^^^^^^
+#12 788.1 ...
+#12 788.1 233 |         pub fn execute_interactive(&self, command: &str) -> Result<String> {
+#12 788.1     |                ^^^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `DownloadProgress` is never constructed
+#12 788.1   --> src/models.rs:15:16
+#12 788.1    |
+#12 788.1 15 |     pub struct DownloadProgress {
+#12 788.1    |                ^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: enum `DownloadStage` is never used
+#12 788.1   --> src/models.rs:24:14
+#12 788.1    |
+#12 788.1 24 |     pub enum DownloadStage {
+#12 788.1    |              ^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `ChatCompletionChunk` is never constructed
+#12 788.1   --> src/openai.rs:61:12
+#12 788.1    |
+#12 788.1 61 | pub struct ChatCompletionChunk {
+#12 788.1    |            ^^^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `ChunkChoice` is never constructed
+#12 788.1   --> src/openai.rs:70:12
+#12 788.1    |
+#12 788.1 70 | pub struct ChunkChoice {
+#12 788.1    |            ^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `Delta` is never constructed
+#12 788.1   --> src/openai.rs:77:12
+#12 788.1    |
+#12 788.1 77 | pub struct Delta {
+#12 788.1    |            ^^^^^
+#12 788.1 
+#12 788.1 warning: field `input` is never read
+#12 788.1    --> src/openai.rs:121:9
+#12 788.1     |
+#12 788.1 120 | pub struct EmbeddingRequest {
+#12 788.1     |            ---------------- field in this struct
+#12 788.1 121 |     pub input: Value, // String or Vec<String>
+#12 788.1     |         ^^^^^
+#12 788.1     |
+#12 788.1     = note: `EmbeddingRequest` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+#12 788.1 
+#12 788.1 warning: struct `LlamaModelParams` is never constructed
+#12 788.1   --> src/llama.rs:59:12
+#12 788.1    |
+#12 788.1 59 | pub struct LlamaModelParams {
+#12 788.1    |            ^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: associated items `load`, `n_vocab`, and `n_embd` are never used
+#12 788.1    --> src/llama.rs:112:12
+#12 788.1     |
+#12 788.1 111 | impl LlamaModel {
+#12 788.1     | --------------- associated items in this implementation
+#12 788.1 112 |     pub fn load(path: &str, n_gpu_layers: i32) -> Result<Self> {
+#12 788.1     |            ^^^^
+#12 788.1 ...
+#12 788.1 129 |     pub fn n_vocab(&self) -> i32 {
+#12 788.1     |            ^^^^^^^
+#12 788.1 ...
+#12 788.1 136 |     pub fn n_embd(&self) -> i32 {
+#12 788.1     |            ^^^^^^
+#12 788.1 
+#12 788.1 warning: methods `generate_token` and `n_tokens` are never used
+#12 788.1    --> src/llama.rs:219:12
+#12 788.1     |
+#12 788.1 165 | impl LlamaContext {
+#12 788.1     | ----------------- methods in this implementation
+#12 788.1 ...
+#12 788.1 219 |     pub fn generate_token(&self) -> Option<i32> {
+#12 788.1     |            ^^^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 266 |     pub fn n_tokens(&self) -> i32 {
+#12 788.1     |            ^^^^^^^^
+#12 788.1 
+#12 788.1 warning: fields `n_gpu_layers` and `model_path` are never read
+#12 788.1    --> src/llama.rs:295:5
+#12 788.1     |
+#12 788.1 290 | pub struct LlamaEngine {
+#12 788.1     |            ----------- fields in this struct
+#12 788.1 ...
+#12 788.1 295 |     n_gpu_layers: i32,
+#12 788.1     |     ^^^^^^^^^^^^
+#12 788.1 296 |     model_path: String,
+#12 788.1     |     ^^^^^^^^^^
+#12 788.1     |
+#12 788.1     = note: `LlamaEngine` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+#12 788.1 
+#12 788.1 warning: field `stream` is never read
+#12 788.1    --> src/llama.rs:310:9
+#12 788.1     |
+#12 788.1 300 | pub struct InferenceOptions {
+#12 788.1     |            ---------------- field in this struct
+#12 788.1 ...
+#12 788.1 310 |     pub stream: bool,
+#12 788.1     |         ^^^^^^
+#12 788.1     |
+#12 788.1     = note: `InferenceOptions` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+#12 788.1 
+#12 788.1 warning: field `ptr` is never read
+#12 788.1    --> src/llama.rs:316:5
+#12 788.1     |
+#12 788.1 315 | pub struct ClipContext {
+#12 788.1     |            ----------- field in this struct
+#12 788.1 316 |     ptr: *mut std::ffi::c_void,
+#12 788.1     |     ^^^
+#12 788.1     |
+#12 788.1     = note: `ClipContext` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+#12 788.1 
+#12 788.1 warning: methods `with_clip`, `with_options`, `sample_token_internal`, `sample_token`, and `unload` are never used
+#12 788.1    --> src/llama.rs:372:12
+#12 788.1     |
+#12 788.1 360 | impl LlamaEngine {
+#12 788.1     | ---------------- methods in this implementation
+#12 788.1 ...
+#12 788.1 372 |     pub fn with_clip(mut self, clip_path: &str) -> Result<Self> {
+#12 788.1     |            ^^^^^^^^^
+#12 788.1 ...
+#12 788.1 382 |     pub fn with_options(mut self, options: InferenceOptions) -> Self {
+#12 788.1     |            ^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 554 |     fn sample_token_internal(&self, ctx: &LlamaContext) -> Option<i32> {
+#12 788.1     |        ^^^^^^^^^^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 558 |     fn sample_token(&mut self, ctx: &LlamaContext) -> Option<i32> {
+#12 788.1     |        ^^^^^^^^^^^^
+#12 788.1 ...
+#12 788.1 562 |     pub fn unload(&mut self) {
+#12 788.1     |            ^^^^^^
+#12 788.1 
+#12 788.1 warning: function `llama_model_default_params` is never used
+#12 788.1   --> src/llama.rs:11:8
+#12 788.1    |
+#12 788.1 11 |     fn llama_model_default_params() -> LlamaModelParams;
+#12 788.1    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `llama_model_load_from_file` is never used
+#12 788.1   --> src/llama.rs:12:8
+#12 788.1    |
+#12 788.1 12 |     fn llama_model_load_from_file(path: *const std::os::raw::c_char, params: LlamaModelParams) -> *mut std::ffi::c_void;
+#12 788.1    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `llama_model_n_vocab` is never used
+#12 788.1   --> src/llama.rs:28:8
+#12 788.1    |
+#12 788.1 28 |     fn llama_model_n_vocab(model: *mut std::ffi::c_void) -> i32;
+#12 788.1    |        ^^^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: struct `CpuInfo` is never constructed
+#12 788.1   --> src/discover.rs:14:12
+#12 788.1    |
+#12 788.1 14 | pub struct CpuInfo {
+#12 788.1    |            ^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `get_cpu_info` is never used
+#12 788.1   --> src/discover.rs:20:8
+#12 788.1    |
+#12 788.1 20 | pub fn get_cpu_info() -> CpuInfo {
+#12 788.1    |        ^^^^^^^^^^^^
+#12 788.1 
+#12 788.1 warning: function `parse_meminfo_line` is never used
+#12 788.1   --> src/discover.rs:50:4
+#12 788.1    |
+#12 788.1 50 | fn parse_meminfo_line(line: &str) -> u64 {
+#12 788.1    |    ^^^^^^^^^^^^^^^^^^
+#12 788.1 
+#12 794.6 warning: `ollama` (bin "ollama") generated 150 warnings (run `cargo fix --bin "ollama" -p ollama` to apply 38 suggestions)
+#12 794.6     Finished `release` profile [optimized] target(s) in 13m 14s
+#12 DONE 795.2s
+
+#13 [stage-1 2/4] RUN apt-get update && apt-get install -y     ca-certificates     libssl3     libvulkan1     libopenblas0     && rm -rf /var/lib/apt/lists/*
+#13 CACHED
+
+#14 [stage-1 3/4] COPY --from=builder /usr/src/ollama/target/release/ollama /usr/bin/ollama
+#14 DONE 0.0s
+
+#15 [stage-1 4/4] COPY --from=builder /usr/local/cuda/targets/x86_64-linux/lib/stubs/libcuda.so /usr/lib/x86_64-linux-gnu/libcuda.so.1
+#15 DONE 0.1s
+
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 1.4s done
+#16 writing image sha256:f1ba90ed4065baee224dab7f3edc963f1870ee123226fc0abbfb037369eb1739 done
+#16 naming to docker.io/library/ollama-rust-cuda done
+#16 DONE 1.4s

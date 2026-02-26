@@ -1,0 +1,348 @@
+warning: unused import: `crate::core::tensor::Shape`
+ --> src/core/model/traits.rs:2:5
+  |
+2 | use crate::core::tensor::Shape;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::collections::HashMap`
+ --> src/core/model/config.rs:2:5
+  |
+2 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::sync::Arc`
+ --> src/core/model/architectures/llama.rs:3:5
+  |
+3 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+  --> src/core/model/mod.rs:12:5
+   |
+12 | use std::collections::HashMap;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Result`
+  --> src/core/tokenizer/mod.rs:11:19
+   |
+11 | use crate::core::{Result, TokenId};
+   |                   ^^^^^^
+
+warning: unused import: `TokenId`
+ --> src/core/cache/mod.rs:5:35
+  |
+5 | use crate::core::{Result, Tensor, TokenId};
+  |                                   ^^^^^^^
+
+warning: unused import: `DType`
+ --> src/core/tensor/ops.rs:1:28
+  |
+1 | use super::{Tensor, Shape, DType};
+  |                            ^^^^^
+
+warning: unused import: `SeekFrom`
+ --> src/infra/gguf/mod.rs:4:27
+  |
+4 | use std::io::{Read, Seek, SeekFrom};
+  |                           ^^^^^^^^
+
+warning: unused import: `GGML_MAX_DIMS`
+ --> src/infra/ggml/backend.rs:1:23
+  |
+1 | use super::{GgmlType, GGML_MAX_DIMS};
+  |                       ^^^^^^^^^^^^^
+
+warning: unused import: `Device`
+ --> src/infra/ggml/backend.rs:2:42
+  |
+2 | use crate::core::{Result, Tensor, DType, Device};
+  |                                          ^^^^^^
+
+warning: unused import: `CString`
+ --> src/infra/ggml/backend.rs:4:24
+  |
+4 | use std::ffi::{c_void, CString};
+  |                        ^^^^^^^
+
+warning: unused import: `Result`
+ --> src/infra/ggml/tensor.rs:1:19
+  |
+1 | use crate::core::{Result, Tensor};
+  |                   ^^^^^^
+
+warning: unused import: `extract::State`
+ --> src/app/server/mod.rs:1:48
+  |
+1 | ... post}, Json, extract::State};
+  |                  ^^^^^^^^^^^^^^
+
+warning: unused import: `std::sync::Arc`
+ --> src/app/server/mod.rs:3:5
+  |
+3 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `tokio::sync::RwLock`
+ --> src/app/server/mod.rs:4:5
+  |
+4 | use tokio::sync::RwLock;
+  |     ^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::sync::Arc`
+ --> src/app/runner/mod.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused imports: `AsyncCommand` and `CommandContext`
+  --> src/app/commands/mod.rs:75:26
+   |
+75 | ...mmand, CommandContext, AsyncCommand, Result};
+   |           ^^^^^^^^^^^^^^  ^^^^^^^^^^^^
+
+warning: unused variable: `core_dtype`
+  --> src/infra/ggml/backend.rs:30:13
+   |
+30 |         let core_dtype = match dtype {
+   |             ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_core_dtype`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `tensor`
+  --> src/infra/ggml/backend.rs:42:27
+   |
+42 | ...compute(&self, tensor: &mut Tensor) -> Res...
+   |                   ^^^^^^ help: if this is intentional, prefix it with an underscore: `_tensor`
+
+warning: variable does not need to be mutable
+  --> src/app/runner/mod.rs:52:13
+   |
+52 | ...   let mut positions: Vec<usize> = (0..tok...
+   |           ----^^^^^^^^^
+   |           |
+   |           help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable `current_pos` is assigned to, but never used
+  --> src/app/runner/mod.rs:55:13
+   |
+55 |         let mut current_pos = tokens.len();
+   |             ^^^^^^^^^^^^^^^
+   |
+   = note: consider using `_current_pos` instead
+
+warning: value assigned to `current_pos` is never read
+  --> src/app/runner/mod.rs:68:13
+   |
+68 |             current_pos += 1;
+   |             ^^^^^^^^^^^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+   = note: `#[warn(unused_assignments)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `scores` is never read
+  --> src/core/tokenizer/sentencepiece.rs:10:5
+   |
+ 6 | pub struct SentencePieceTokenizer {
+   |            ---------------------- field in this struct
+...
+10 |     scores: HashMap<TokenId, f32>,
+   |     ^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: fields `layer_count`, `head_count`, and `head_dim` are never read
+  --> src/core/cache/mod.rs:8:5
+   |
+ 7 | pub struct CausalKVCache {
+   |            ------------- fields in this struct
+ 8 |     layer_count: usize,
+   |     ^^^^^^^^^^^
+ 9 |     head_count: usize,
+   |     ^^^^^^^^^^
+10 |     head_dim: usize,
+   |     ^^^^^^^^
+
+warning: field `backend` is never read
+ --> src/infra/ggml/context.rs:6:5
+  |
+5 | pub struct GgmlContext {
+  |            ----------- field in this struct
+6 |     backend: GgmlBackend,
+  |     ^^^^^^^
+
+warning: method `as_f64` is never used
+   --> src/gguf.rs:420:8
+    |
+390 | impl Value {
+    | ---------- method in this implementation
+...
+420 |     fn as_f64(&self) -> Option<f64> {
+    |        ^^^^^^
+
+warning: `ollama` (lib) generated 26 warnings (run `cargo fix --lib -p ollama` to apply 20 suggestions)
+    Checking ollama v0.5.0 (/home/lemoreira/git/integracoes/ollama)
+warning: unused imports: `Command` and `Stdio`
+ --> src/bin/runner.rs:4:20
+  |
+4 | use std::process::{Command, Stdio};
+  |                    ^^^^^^^  ^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+  --> src/bin/runner.rs:55:9
+   |
+55 |     let mut tokenizer = GgufTokenizer::new(gg...
+   |         ----^^^^^^^^^
+   |         |
+   |         help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `vocab_size`
+  --> src/bin/runner.rs:54:9
+   |
+54 |     let vocab_size = gguf.metadata.vocab_size...
+   |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_vocab_size`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `i`
+   --> src/bin/runner.rs:204:14
+    |
+204 |         for (i, &token) in tokens.iter().enu...
+    |              ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `tokenizer`
+   --> src/bin/runner.rs:220:105
+    |
+220 | ...kens: usize, tokenizer: &GgufTokenizer) -...
+    |                 ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_tokenizer`
+
+warning: field `vocab_scores` is never read
+   --> src/bin/runner.rs:140:5
+    |
+138 | struct GgufTokenizer {
+    |        ------------- field in this struct
+139 |     vocab: Vec<String>,
+140 |     vocab_scores: Vec<f32>,
+    |     ^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `decode` is never used
+   --> src/bin/runner.rs:188:8
+    |
+145 | impl GgufTokenizer {
+    | ------------------ method in this implementation
+...
+188 |     fn decode(&self, tokens: &[i32]) -> Stri...
+    |        ^^^^^^
+
+warning: `ollama` (bin "runner") generated 7 warnings (run `cargo fix --bin "runner" -p ollama` to apply 5 suggestions)
+warning: unused import: `types::*`
+ --> src/api/mod.rs:7:9
+  |
+7 | pub use types::*;
+  |         ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `anyhow`
+ --> src/llama.rs:1:28
+  |
+1 | use anyhow::{bail, Result, anyhow};
+  |                            ^^^^^^
+
+warning: unused import: `Tensor`
+ --> src/llama.rs:2:27
+  |
+2 | use candle_core::{Device, Tensor};
+  |                           ^^^^^^
+
+warning: unused import: `half::f16`
+ --> src/llama.rs:5:5
+  |
+5 | use half::f16;
+  |     ^^^^^^^^^
+
+warning: variable does not need to be mutable
+   --> src/models.rs:679:9
+    |
+679 |         mut progress: F,
+    |         ----^^^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+error[E0277]: `LlamaEngine` doesn't implement `Debug`
+   --> src/runner/mod.rs:146:9
+    |
+141 | ...[derive(Debug)]
+    |            ----- in this derive macro expansion
+...
+146 | ...   engine: Option<crate::llama::LlamaEngine>,
+    |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ unsatisfied trait bound
+    |
+    = help: the trait `Debug` is not implemented for `LlamaEngine`
+    = note: add `#[derive(Debug)]` to `LlamaEngine` or manually `impl Debug for LlamaEngine`
+help: the trait `Debug` is implemented for `std::option::Option<T>`
+   --> /rustc/01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf/library/core/src/option.rs:594:16
+help: consider annotating `LlamaEngine` with `#[derive(Debug)]`
+   --> src/llama.rs:41:1
+    |
+ 41 + #[derive(Debug)]
+ 42 | pub struct LlamaEngine {
+    |
+
+error[E0308]: mismatched types
+   --> src/llama.rs:86:45
+    |
+ 86 | ... = ModelWeights::from_gguf(&mut file, &mu...
+    |       ----------------------- ^^^^^^^^^ expected `Content`, found `&mut File`
+    |       |
+    |       arguments to this function are incorrect
+    |
+note: associated function defined here
+   --> /home/lemoreira/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/candle-transformers-0.9.2/src/models/quantized_llama.rs:355:12
+    |
+355 |     pub fn from_gguf<R: std::io::Seek + std:...
+    |            ^^^^^^^^^
+
+warning: variable does not need to be mutable
+   --> src/llama.rs:101:13
+    |
+101 | ...   let mut logits_processor = LogitsProce...
+    |           ----^^^^^^^^^^^^^^^^
+    |           |
+    |           help: remove this `mut`
+
+warning: unused variable: `prompt`
+  --> src/llama.rs:92:35
+   |
+92 | ...<F>(&mut self, prompt: &str, mut callback:...
+   |                   ^^^^^^ help: if this is intentional, prefix it with an underscore: `_prompt`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `model`
+   --> src/llama.rs:100:13
+    |
+100 |         let model = self.model.as_mut().unwr...
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_model`
+
+warning: unused variable: `logits_processor`
+   --> src/llama.rs:101:13
+    |
+101 |         let mut logits_processor = LogitsPro...
+    |             ^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_logits_processor`
+
+Some errors have detailed explanations: E0277, E0308.
+For more information about an error, try `rustc --explain E0277`.
+warning: `ollama` (bin "ollama") generated 9 warnings
+error: could not compile `ollama` (bin "ollama") due to 2 previous errors; 9 warnings emitted

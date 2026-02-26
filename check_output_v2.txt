@@ -1,0 +1,277 @@
+   Compiling ollama v0.5.0 (/home/lemoreira/git/integracoes/ollama)
+warning: unused import: `std::time::Duration`
+ --> src/cmd/mod.rs:6:5
+  |
+6 | use std::time::Duration;
+  |     ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `serde_json::Value`
+ --> src/convert/mod.rs:3:5
+  |
+3 | use serde_json::Value;
+  |     ^^^^^^^^^^^^^^^^^
+
+warning: unused import: `bail`
+ --> src/parser/modelfile.rs:1:22
+  |
+1 | ...sult, bail};
+  |          ^^^^
+
+warning: unused import: `PathBuf`
+ --> src/parser/modelfile.rs:3:23
+  |
+3 | ...ath, PathBuf};
+  |         ^^^^^^^
+
+warning: unused imports: `Command`, `Modelfile`, and `parse`
+ --> src/parser/mod.rs:3:21
+  |
+3 | ...::{Modelfile, Command, parse};
+  |       ^^^^^^^^^  ^^^^^^^  ^^^^^
+
+warning: unused import: `anyhow::Result`
+ --> src/runner/mod.rs:1:5
+  |
+1 | use anyhow::Result;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> src/runner/mod.rs:2:5
+  |
+2 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::sync::Arc`
+ --> src/runner/mod.rs:3:5
+  |
+3 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `tokio::sync::RwLock`
+ --> src/runner/mod.rs:4:5
+  |
+4 | use tokio::sync::RwLock;
+  |     ^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Event` and `Sse`
+ --> src/server/mod.rs:6:46
+  |
+6 | ...::{Event, Sse}},
+  |       ^^^^^  ^^^
+
+warning: unused imports: `Stream` and `self`
+  --> src/server/mod.rs:10:23
+   |
+10 | ...::{self, Stream};
+   |       ^^^^  ^^^^^^
+
+warning: unused import: `anyhow::Result`
+ --> src/thinking/mod.rs:2:9
+  |
+2 |     use anyhow::Result;
+  |         ^^^^^^^^^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> src/fs/mod.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `BufReader` and `Seek`
+ --> src/fs/mod.rs:2:15
+  |
+2 | ...::{BufReader, Read, Seek, S...
+  |       ^^^^^^^^^        ^^^^
+
+warning: unused import: `std::path::Path`
+ --> src/fs/mod.rs:3:5
+  |
+3 | use std::path::Path;
+  |     ^^^^^^^^^^^^^^^
+
+warning: unused imports: `SeekFrom` and `Seek`
+ --> src/fs/mod.rs:7:36
+  |
+7 | ...d, Seek, SeekFrom};
+  |       ^^^^  ^^^^^^^^
+
+warning: variant `Q2_K` should have an upper camel case name
+  --> src/fs/mod.rs:20:9
+   |
+20 |         Q2_K,
+   |         ^^^^ help: convert the identifier to upper camel case: `Q2K`
+   |
+   = note: `#[warn(non_camel_case_types)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: variant `Q3_K` should have an upper camel case name
+  --> src/fs/mod.rs:21:9
+   |
+21 |         Q3_K,
+   |         ^^^^ help: convert the identifier to upper camel case: `Q3K`
+
+warning: variant `Q4_K` should have an upper camel case name
+  --> src/fs/mod.rs:22:9
+   |
+22 |         Q4_K,
+   |         ^^^^ help: convert the identifier to upper camel case: `Q4K`
+
+warning: variant `Q5_K` should have an upper camel case name
+  --> src/fs/mod.rs:23:9
+   |
+23 |         Q5_K,
+   |         ^^^^ help: convert the identifier to upper camel case: `Q5K`
+
+warning: variant `Q6_K` should have an upper camel case name
+  --> src/fs/mod.rs:24:9
+   |
+24 |         Q6_K,
+   |         ^^^^ help: convert the identifier to upper camel case: `Q6K`
+
+warning: variant `Q8_K` should have an upper camel case name
+  --> src/fs/mod.rs:25:9
+   |
+25 |         Q8_K,
+   |         ^^^^ help: convert the identifier to upper camel case: `Q8K`
+
+warning: unused import: `parking_lot::RwLock`
+ --> src/models.rs:7:5
+  |
+7 | use parking_lot::RwLock;
+  |     ^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> src/models.rs:8:5
+  |
+8 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Result` and `bail`
+ --> src/openai.rs:1:14
+  |
+1 | ...::{Result, bail};
+  |       ^^^^^^  ^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> src/openai.rs:4:5
+  |
+4 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `CStr`
+ --> src/llama.rs:4:16
+  |
+4 | ...ffi::{CStr, CStri...
+  |          ^^^^
+
+warning: unused import: `std::path::Path`
+ --> src/llama.rs:5:5
+  |
+5 | use std::path::Path;
+  |     ^^^^^^^^^^^^^^^
+
+warning: unused import: `std::time::Instant`
+ --> src/llama.rs:7:5
+  |
+7 | use std::time::Instant;
+  |     ^^^^^^^^^^^^^^^^^^
+
+warning: variable does not need to be mutable
+   --> src/runner/mod.rs:408:21
+    |
+408 | ...et mut runner = ...
+    |       ----^^^^^^
+    |       |
+    |       help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> src/runner/mod.rs:428:29
+    |
+428 | ...me(mut runner) =...
+    |       ----^^^^^^
+    |       |
+    |       help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/models.rs:155:51
+    |
+155 | ...g, mut progress_callback: F...
+    |       ----^^^^^^^^^^^^^^^^^
+    |       |
+    |       help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/models.rs:230:17
+    |
+230 | ...et mut results = ...
+    |       ----^^^^^^^
+    |       |
+    |       help: remove this `mut`
+
+error: implementation of `FnOnce` is not general enough
+   --> src/server/mod.rs:605:5
+    |
+605 | /     tokio::spawn...
+606 | |         let tx_i...
+607 | |         let res ...
+608 | |             let ...
+...   |
+617 | |     });
+    | |______^ implementation of `FnOnce` is not general enough
+    |
+    = note: closure with signature `fn((usize, &'0 Layer)) -> {async block@src/models.rs:216:21: 216:31}` must implement `FnOnce<((usize, &'1 Layer),)>`, for any two lifetimes `'0` and `'1`...
+    = note: ...but it actually implements `FnOnce<((usize, &Layer),)>`
+
+warning: variable does not need to be mutable
+   --> src/models.rs:252:51
+    |
+252 | ...g, mut progress_callback: F...
+    |       ----^^^^^^^^^^^^^^^^^
+    |       |
+    |       help: remove this `mut`
+
+warning: unused import: `futures_util::StreamExt`
+  --> src/server/mod.rs:11:5
+   |
+11 | use futures_util::StreamExt;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `futures_util::StreamExt`
+ --> src/tools.rs:2:5
+  |
+2 | use futures_util::StreamExt;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused variable: `model`
+  --> src/cmd/mod.rs:60:53
+   |
+60 | ...str, model: &str...
+   |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_model`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> src/runner/mod.rs:205:53
+    |
+205 | ...r, mut callback: F...
+    |       ----^^^^^^^^
+    |       |
+    |       help: remove this `mut`
+
+warning: unused variable: `tools`
+   --> src/runner/mod.rs:232:54
+    |
+232 | ...], tools: Optio...
+    |       ^^^^^ help: if this is intentional, prefix it with an underscore: `_tools`
+
+warning: unused variable: `total_layers`
+   --> src/models.rs:202:17
+    |
+202 | ...et total_layers = ...
+    |       ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_total_layers`
+
+warning: `ollama` (bin "ollama") generated 40 warnings
+error: could not compile `ollama` (bin "ollama") due to 1 previous error; 40 warnings emitted
